@@ -1,0 +1,1 @@
+var source = new EventSource('http://test.com/events');

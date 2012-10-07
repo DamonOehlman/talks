@@ -1,0 +1,567 @@
+<!doctype html>  
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>HTML5 Messaging</title>
+
+<meta name="description" content="An easy to use CSS 3D slideshow tool for quickly creating good looking HTML presentations.">
+<meta name="author" content="Hakim El Hattab">
+
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="css/pres.style.css" /><link rel="stylesheet" type="text/css" href="css/highlight.zenburn.css" /><script src="js/jquery.min.js"></script><script src="js/head.min.js"></script><link rel="stylesheet" type="text/css" href="css/main.css" /><link rel="stylesheet" type="text/css" href="css/theme/default.css" /><link rel="stylesheet" type="text/css" href="css/reveal-tweaks.css" /><link rel="stylesheet" type="text/css" href="css/bgimage-helper.css" />
+</head>
+<body>
+<div class="reveal">
+	<!-- Used to fade in a background when a specific slide state is reached -->
+	<div class="state-background"></div>
+	
+	<!-- Any section element inside of this container is displayed as a slide -->
+	<div class="slides">
+	    
+        <section data-bg="images/5333260849_d8c52df551_b.jpg"data-attribution="http://www.flickr.com/photos/pasukaru76/5333260849/in/set-72157624732951397/">
+        	<h1>HTML5 Messaging</h1>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>&quot;HTML5&quot; Messaging Technologies</h2>
+<ul>
+<li><p>Now (Kind Of)</p>
+<ul>
+<li>Web Sockets: <a href="http://www.w3.org/TR/websockets/">spec</a> <a href="http://caniuse.com/#feat=websockets">caniuse</a></li>
+<li>Cross Document Messaging <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/web-messaging.html#crossDocumentMessages">spec</a> <a href="http://caniuse.com/#feat=x-doc-messaging">caniuse</a></li>
+<li>Server Sent Events <a href="http://www.w3.org/TR/eventsource/">spec</a> <a href="http://caniuse.com/#feat=eventsource">caniuse</a></li>
+</ul>
+</li>
+<li><p>On the Way</p>
+<ul>
+<li>Web Intents <a href="http://webintents.org/">spec</a> </li>
+</ul>
+</li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Why Care About Messaging?</h2>
+<ul>
+<li>Because we can do better than the currently one sided conversation.</li>
+<li>Websockets and other messaging techniques will replace current make-shift solutions.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Covered Today</h2>
+<ul>
+<li>Mainly Web Sockets and Cross Document Messaging</li>
+<li>Messaging using Text</li>
+</ul>
+
+
+
+        </section>
+        
+        <section data-bg="images/5613865198_e62da9ab4b_o.jpg"data-attribution="http://www.flickr.com/photos/pasukaru76/">
+        	<h1>Cross Document Messaging</h1>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>What is Cross Document Messaging?</h2>
+<ul>
+<li><p>A method of allowing two browser windows to communicate without violating cross-domain restrictions.</p>
+</li>
+<li><p>Comes in two flavours: </p>
+<ol>
+<li>Simple and effective <code>postMessage</code> calls to a known <code>Window</code> instance.</li>
+<li>Channel Messaging.</li>
+</ol>
+</li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Why Use Cross Document Messaging?</h2>
+<p>Quite simply - because you want to talk to other browser window contexts.
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Example: Prepping Demo Code</h2>
+<pre><code class="javascript">var activeDemo = '';
+Reveal.addEventListener('slidechanged', function(evt) {
+    // find the active slide
+    var demo = $('section.present').data('demo');
+    
+    if (demo && activeDemo !== demo && window.opener) {
+        window.opener.postMessage('demo.' + demo, '*');
+    }
+});</pre></code>
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>What about Channel Messaging?</h2>
+<ul>
+<li><p>Can be used to facilitate communication between two windows with no knowledge of each other.</p>
+</li>
+<li><p>While an interesting concept, I personally don&#39;t feel I&#39;m getting bang for buck.</p>
+</li>
+<li><p>Goes beyond what can be covered in this talk.</p>
+</li>
+</ul>
+
+
+
+        </section>
+        
+        <section data-bg="images/5158715290_f0605b197a_b.jpg"data-attribution="http://www.flickr.com/photos/pedrovezini/5158715290/">
+        	<h1>Web Sockets</h1>
+
+
+
+        </section>
+        
+        <section >
+        	<h3>Why Websockets?</h3>
+<ul>
+<li>Because you can&#39;t beat realtime.</li>
+<li>Bi-directional communication.</li>
+<li>Lightweight!</li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Creating a Socket</h2>
+<p>Creating a new websocket connection (and attempting to open that connection) is <strong>really, really</strong> easy:
+
+</p>
+<pre><code class="javascript">var socket = new WebSocket('ws://echo.websocket.org/');</pre></code>
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Open Sesame</h2>
+<p>And, your newly created websocket object will fire an <strong>open</strong> message when the connection is active:
+
+</p>
+<pre><code class="javascript">socket.onopen = function() {
+    // ready for comms
+};
+</pre></code>
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Sending Messages</h2>
+<p>Sending a message is as simple as calling the send method of a WebSocket instance:
+
+</p>
+<pre><code class="javascript">// say hello to the websocket server
+socket.send('hello');</pre></code>
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Receiving Messages</h2>
+<p>Listen for the message event:
+
+</p>
+<pre><code class="javascript">socket.onmessage = function(evt) {
+    // data is available in the data member
+    console.log('received data: ' + evt.data);
+};</pre></code>
+
+</p>
+
+
+
+        </section>
+        
+        <section data-bg="images/2545465723_ac7ffc6e73_b.jpg"data-attribution="http://www.flickr.com/photos/tim_norris/2545465723/"data-demo="echo">
+        	<h1>DEMO: Simple Echo</h1>
+
+
+
+        </section>
+        
+        <section data-bg="images/6252678567_5625b237c3_b.jpg"data-attribution="http://www.flickr.com/photos/photography-andreas/6252678567/"data-demo="tweets">
+        	<h1>DEMO: Twitter Feed</h1>
+
+
+
+        </section>
+        
+        <section data-bg="images/4865872893_56d408f406_o.jpg"data-attribution="http://www.flickr.com/photos/azrasta/4865872893/">
+        	<h1>Web sockets in Production</h1>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Browser Support</h2>
+<p>Browser support for websockets is far from stable, and in these slides I have demonstrated the native browser interface to WebSockets.
+
+</p>
+<p>If you are writing a production app, however, <strong>you really need</strong> to include stable fallbacks to deal with non-existent or poor websocket support.
+
+</p>
+<p>I&#39;d recommend checking out something like <a href="http://socket.io/">Socket.IO</a> or another similar framework that takes care of this for you.
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Server Support</h2>
+<p>There are quite a few server implementations of websockets in technologies from Node.js to Java.  
+
+</p>
+<p>While application server support is progressing well, you also need to have a look at what other webservers, reverse proxies, security appliances, etc sit between your customers and your app server. Support for Websockets in these layers is definitely not as well progressed.
+
+</p>
+
+
+
+        </section>
+        
+        <section data-bg="images/5729640585_aa43786e64_b.jpg"data-attribution="http://www.flickr.com/photos/pasukaru76/">
+        	<h1>Server Sent Events (EventSource)</h1>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>What are Server Sent Events?</h2>
+<ul>
+<li>A simple way (I think) to add realtime updates to your web apps.</li>
+<li>A text stream of data (over HTTP/S) from the server that is fed back to the browser.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Why Use SSE?</h2>
+<ul>
+<li>Simple, clever implementation without browser hacks.</li>
+<li>While not as cool (or interactive) as websockets, less dependencies on network stack.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Defining an EventSource</h2>
+<p>Like the other APIs covered in this talk, initialising a new <code>EventSource</code> is very simple:
+
+</p>
+<pre><code class="javascript">var source = new EventSource('http://test.com/events');</pre></code>
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Handling Generic Events</h2>
+<p>Like the cross-document messaging and websocket APIs, an <code>EventSource</code> will generate message events:
+
+</p>
+<pre><code class="javascript">source.onmessage = function(evt) {
+    console.log(evt.data);
+};</pre></code>
+
+</p>
+<p>And you can also can create and consume custom events too. Before we have a look at that though, let&#39;s take a quick look at the event stream format.
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Dive Into The Event Stream</h2>
+<p>The event stream is simply a plain text stream which contains textual event data:
+
+</p>
+<pre><code>data: This is the first message.
+
+data: This is the second message, it
+data: has two lines.
+
+data: This is the third message.</code></pre>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Custom Events in the Stream</h2>
+<p>Custom events in the stream have an <code>event</code> specifier:
+
+</p>
+<pre><code>event: add
+data: 73857293
+
+event: remove
+data: 2153
+
+event: add
+
+data: 113411</code></pre>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Handling Custom Events</h2>
+<p>Handling these custom events is as simple as registering listeners for those specific event names:
+
+</p>
+<pre><code class="javascript">source.addEventListener('add', function(evt) {
+    // handle add
+}, false);
+
+source.addEventListener('remove', function(evt) {
+    // handle remove
+}, false);</pre></code>
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Cross Domain Restrictions</h2>
+<p>It&#39;s important to note that Server Sent Events <strong>are</strong> subject to cross-domain security policy, and CORS support is still emerging in most browsers.
+
+</p>
+
+
+
+        </section>
+        
+        <section data-bg="images/5742538697_6a042efd51_b.jpg"data-attribution="http://www.flickr.com/photos/eldave/5742538697/">
+        	<h1>Web Intents</h1>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>What are Web Intents?</h2>
+<p>The <strong>intention</strong> is to provide:
+
+</p>
+<blockquote>
+<p>DOM interfaces and markup used by client and service pages to create, receive, and reply to Web Intents messages, and the procedures the User Agent carries out to facilitate that process.
+
+</p>
+</blockquote>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>What are Web Intents (Plain English)</h2>
+<ul>
+<li><strong>Fact 1:</strong> You need something done on the web.</li>
+<li><strong>Fact 2:</strong> There are many services, plugins, etc that are capable of doing what you require.</li>
+<li><strong>Fact 3:</strong> The Web Intents project is a solid attempt to standardise both the <strong>service definition</strong> and the <strong>action invocation</strong>.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Intent Registration</h2>
+<p>The proposed markup for registering a Web Intent for use looks something like:
+
+</p>
+<pre><code class="lang-html">&lt;intent 
+    action=&quot;http://webintents.org/share&quot; 
+    type=&quot;text/uri-list&quot; 
+    href=&quot;link.html&quot; 
+    disposition=&quot;inline&quot;
+    title=&quot;Link Share Intent&quot; /&gt;</code></pre>
+<p>An intent used in the document is defined in the <code>head</code> of the document.
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Invoking a Web Intent</h2>
+<p>A Web Intent is invoked by creating a new <code>Intent</code> object, and then calling the <code>startActivity</code> method:
+
+</p>
+<pre><code class="javascript">var intent = new Intent(
+    "http://webintents.org/share",
+    "text/uri-list",
+    [ 'http://code12melb.webdirections.org/' ]
+);
+
+window.navigator.startActivity(intent);</pre></code>
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Web Intents Will Be Awesome</h2>
+<p>To keep an eye on their progress, check out:
+
+</p>
+<p><a href="http://webintents.org/">http://webintents.org/</a>
+
+
+
+
+</p>
+
+
+
+        </section>
+        
+        <section data-bg="images/6873936107_c6e959b5d9_b.jpg"data-attribution="http://www.flickr.com/photos/kaptainkobold/6873936107/">
+        	<h1>Wrapping Up</h1>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Go Forth and Experiment</h2>
+<ul>
+<li><p>There are definitely places where these messaging techniques may be useful for you right now.</p>
+</li>
+<li><p>In an experimentation context, the APIs covered today are all very accessible. Play with them you must.</p>
+</li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Code and Talk</h2>
+<p>If you would like to have a play with the tech, then both the slide deck and websocket demo tool are available on github:
+
+</p>
+<p><a href="https://github.com/DamonOehlman/talk-html5-messaging">Talk</a> &amp; <a href="https://github.com/DamonOehlman/messaging-demos">Demos</a>
+
+</p>
+
+
+
+        </section>
+        
+        <section data-bg="images/5270245821_3f5b2f2163_b.jpg"data-attribution="http://www.flickr.com/photos/25171207@N02/5270245821/">
+        	<h1>Questions?</h1>
+
+
+
+        </section>
+        
+	</div>
+
+	<!-- The navigational controls UI -->
+	<aside class="controls">
+		<a class="left" href="#">&#x25C4;</a>
+		<a class="right" href="#">&#x25BA;</a>
+		<a class="up" href="#">&#x25B2;</a>
+		<a class="down" href="#">&#x25BC;</a>
+	</aside>
+
+	<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+	<div class="progress"><span></span></div>
+</div>
+<script src="js/pres.js"></script><script src="js/highlight.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="js/reveal.js"></script><script src="js/bgimage-helper.js"></script>
+<script>
+	// Parse the query string into a key/value object
+	var query = {};
+	location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+		query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+	} );
+
+	Reveal.initialize({
+		// Display controls in the bottom right corner
+		controls: true,
+
+		// Display a presentation progress bar
+		progress: true,
+
+		// If true; each slide will be pushed to the browser history
+		history: true,
+
+		// Loops the presentation, defaults to false
+		loop: false,
+
+		// Flags if mouse wheel navigation should be enabled
+		mouseWheel: true,
+
+		// Apply a 3D roll to links on hover
+		rollingLinks: true,
+
+		// UI style
+		theme: query.theme || 'default', // default/neon
+
+		// Transition style
+		transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+	});
+</script>
+</body>
+</html>
