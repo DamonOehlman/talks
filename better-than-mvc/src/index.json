@@ -6,9 +6,8 @@
         "intro.jade",
         "prosandcons.md",
         "alternatives.md",
-        "todomvc.md",
-        "summary.jade",
-        "further-reading.md"
+        "challenge.jade",
+        "summary.md"
     ],
 
     "aliases": {

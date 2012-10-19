@@ -1,5 +1,4 @@
 # TodoMVC
-## Educate Yourself
 
 ---
 

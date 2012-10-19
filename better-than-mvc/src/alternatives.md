@@ -15,13 +15,55 @@ ul
 
 # Message Bus
 
+---jade
+
+h2 A Bus provides Lightweight Coupling
+
+ul
+  li.fragment Provision for organic growth of software
+  li.fragment Strong testability of application components
+  li.fragment Well geared to dealing with increasingly realtime nature of the web
+  li.fragment Personally I can worked with and can highly recommend 
+    a(src="https://github.com/DmitryBaranovskiy/eve") eve
+
 ---
 
 ## Eve
+### Reactive UI
 
 Very simple, decoupled handler to keep the UI in sync with the data:
 
 [[code ../examples/eventbus/js/update-todos.js]]
+
+Personally, I feel more comfortable using this technique that using automatic UI/View bindings.
+
+---
+
+## Eve
+### Decoupled "Controller" Actions
+
+Using appropriate event namespacing with eve can provide flexible decoupled handling of application actions:
+
+[[code ../examples/eventbus/js/todo-save.js]]
+
+---
+
+## Eve
+### Event Handler Priority
+
+Eve supports the ability to register a handler in a particular priority order.  For example, it is extremely simple to wire in validation for our add todo event:
+
+
+[[code ../examples/eventbus/js/todo-validate.js]]
+
+---
+
+## Eve
+### Wildcard Handling
+
+Wildcard matching provides the ability to events matching a particular pattern with a centralized handler:
+
+[[code ../examples/eventbus/js/generic-validate.js]]
 
 ---
 
@@ -33,6 +75,8 @@ Very simple, decoupled handler to keep the UI in sync with the data:
 ---
 
 ## Future Developments
+
+There is some great stuff coming down the pipe that makes an MVCesque approach more sensible.
 
 - `Object.observe`
   [Article](http://weblog.bocoup.com/javascript-object-observe/) [Spec](http://wiki.ecmascript.org/doku.php?id=harmony:observe)

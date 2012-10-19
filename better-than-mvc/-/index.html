@@ -172,13 +172,86 @@
         </section>
         
         <section >
+        	<h2>A Bus provides Lightweight Coupling</h2><ul><li class="fragment">Provision for organic growth of software</li><li class="fragment">Strong testability of application components</li><li class="fragment">Well geared to dealing with increasingly realtime nature of the web</li><li class="fragment">Personally I can worked with and can highly recommend <a src="https://github.com/DmitryBaranovskiy/eve">eve</a></li></ul>
+
+
+        </section>
+        
+        <section >
         	<h2>Eve</h2>
+<h3>Reactive UI</h3>
 <p>Very simple, decoupled handler to keep the UI in sync with the data:
 
 </p>
 <pre><code class="javascript">eve.on('todolist.refresh', function(todos) { 
   $('ul.todos').html(template(items));
 });</pre></code>
+
+</p>
+<p>Personally, I feel more comfortable using this technique that using automatic UI/View bindings.
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Eve</h2>
+<h3>Decoupled &quot;Controller&quot; Actions</h3>
+<p>Using appropriate event namespacing with eve can provide flexible decoupled handling of application actions:
+
+</p>
+<pre><code class="javascript">eve.on('todolist.add.todo', function(todo) {
+  // save the todo to the context appropriate storage
+});</pre></code>
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Eve</h2>
+<h3>Event Handler Priority</h3>
+<p>Eve supports the ability to register a handler in a particular priority order.  For example, it is extremely simple to wire in validation for our add todo event:
+
+
+</p>
+<pre><code class="javascript">// wire in a "before" other actions event handler
+eve.on('todolist.add.todo', function(todo) {
+  // validate the todo
+  var vResults = validator.validate(rules.todo, todo);
+
+  // if the 
+  if (! vResults.valid) {
+    eve.stop();
+  }
+})(-1);</pre></code>
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Eve</h2>
+<h3>Wildcard Handling</h3>
+<p>Wildcard matching provides the ability to events matching a particular pattern with a centralized handler:
+
+</p>
+<pre><code class="javascript">eve.on('todolist.add.*', function(data) {
+  // get the validation rules based on the type of data being added
+  var vRules = rules[eve.nt().split('.')[2]],
+      vResults = validator.validate(vRules, data);
+
+  // if the 
+  if (! vResults.valid) {
+    eve.stop();
+  }
+})(-1);</pre></code>
 
 </p>
 
@@ -195,6 +268,9 @@
         
         <section >
         	<h2>Future Developments</h2>
+<p>There is some great stuff coming down the pipe that makes an MVCesque approach more sensible.
+
+</p>
 <ul>
 <li><p><code>Object.observe</code>
 <a href="http://weblog.bocoup.com/javascript-object-observe/">Article</a> <a href="http://wiki.ecmascript.org/doku.php?id=harmony:observe">Spec</a></p>
@@ -208,46 +284,25 @@
         </section>
         
         <section >
-        	<h1>TodoMVC</h1>
-<h2>Educate Yourself</h2>
-
-
-
-        </section>
-        
-        <section >
-        	<h2>What is TodoMVC?</h2>
-<ul>
-<li>An ambitious project from <a href="https://github.com/addyosmani">Addy Osmani</a> and <a href="https://github.com/sindresorhus">Sindre Sorhous</a> to compare MV* frameworks using a common baseline - a simple Todo web application.</li>
-</ul>
-
+        	<h1>The Challenge</h1>
 
 
         </section>
         
         <section >
-        	<h2>Primary Frameworks</h2>
-<ul>
-<li><a href="http://documentcloud.github.com/backbone">Backbone</a></li>
-<li><a href="http://emberjs.com/">Ember</a></li>
-<li><a href="http://angularjs.org/">AngularJS</a></li>
-<li><a href="http://spinejs.com/">Spine</a></li>
-<li><a href="http://knockoutjs.com/">KnockoutJS</a></li>
-<li><a href="http://dojotoolkit.org/">Dojo</a></li>
-<li><a href="http://yuilibrary.com/">YUI</a></li>
-<li><a href="http://batmanjs.org/">Batman.js</a></li>
-<li><a href="http://code.google.com/closure/library/">Closure</a></li>
-<li><a href="http://agilityjs.com/">Agility.js</a></li>
-<li><a href="http://kmalakoff.github.com/knockback">Knockback.js</a></li>
-<li><a href="https://developers.google.com/web-toolkit/">GWT</a></li>
-</ul>
-
+        	<h2>Research</h2><ul><li class="fragment">Research the current offerings</li><li class="fragment"><a src="http://addyosmani.github.com/todomvc/">TodoMVC </a>is a great place to start.</li></ul>
 
 
         </section>
         
         <section >
-        	<h2>Summary</h2><ul><li class="fragment">Building Web Applications with a Rich Client is challenging</li><li class="fragment">In general, client side devs struggle with sensible and reusable application composition</li><li class="fragment">While client-side MVC frameworks are a pragmatic approach to building apps, they don't deal with the underlying problems or are very future focused.</li></ul>
+        	<h2>Think</h2><ul><li class="fragment">Consider your specific application requirements</li><li class="fragment">Don't get sucked into the hype</li></ul>
+
+
+        </section>
+        
+        <section >
+        	<h2>Innovate</h2><ul><li class="fragment">Don't be afraid to try something new and different</li><li class="fragment">Recreating familiar environments and patterns is flawed</li></ul>
 
 
         </section>
@@ -256,22 +311,15 @@
         	<h2>Thanks</h2>
 <ul>
 <li>Feel free to heckle on twitter (<a href="http://twitter.com/DamonOehlman">@DamonOehlman</a>)</li>
-<li>Code:  <a href="https://github.com/DamonOehlman">https://github.com/DamonOehlman</a><ul>
+<li>Further Reading (kudos to <a href="https://twitter.com/addyosmani">Addy Osmani</a>)<ul>
+<li><a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#detailmvcmvp">Learning JavaScript Design Patterns</a></li>
+<li><a href="http://addyosmani.com/blog/digesting-javascript-mvc-pattern-abuse-or-evolution/">Digesting JavaScript MVC - Pattern Abuse or Evolution</a></li>
+</ul>
+</li>
+<li>Experimental Projects on Github<ul>
+<li><a href="https://github.com/DamonOehlman">https://github.com/DamonOehlman</a></li>
 <li><a href="https://github.com/DamonOehlman/partybus">PartyBus</a> - <code>Object.observe =&gt; eve</code></li>
 </ul>
-</li>
-</ul>
-
-
-
-        </section>
-        
-        <section >
-        	<h2>Further Reading</h2>
-<ul>
-<li><p><a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#detailmvcmvp">Learning JavaScript Design Patterns</a></p>
-</li>
-<li><p><a href="http://addyosmani.com/blog/digesting-javascript-mvc-pattern-abuse-or-evolution/">Digesting JavaScript MVC - Pattern Abuse or Evolution</a></p>
 </li>
 </ul>
 
