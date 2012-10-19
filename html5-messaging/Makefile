@@ -1,7 +1,8 @@
 SHELL := /bin/bash
 
 build:
-	@DEBUG=boxit* /development/projects/DamonOehlman/boxit/bin/boxit --path src --output .
+	@/development/projects/DamonOehlman/boxit/bin/boxit --path src --output .
+	@cp -r src/assets/*.png "-/images/"
 
 test:
 	@mocha --reporter spec

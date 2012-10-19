@@ -1,0 +1,40 @@
+{
+    "title": "Better Than MVC",
+    "template": "reveal.js",
+
+    "sources": [
+        "intro.jade",
+        "prosandcons.md",
+        "alternatives.md",
+        "todomvc.md",
+        "summary.jade",
+        "further-reading.md"
+    ],
+
+    "aliases": {
+        "resources": "github://DamonOehlman/talk-resources/"
+    },
+
+    "includes": {
+        "head": [
+            "css/pres.style.css"
+        ],
+
+        "body": [
+            "js/pres.js"
+        ]
+    },
+
+    "theme": "dark",
+    "plugins": {
+        "code": {
+            "style": "zenburn"
+        }
+    },
+
+    "resources": [
+        "css/reveal-tweaks.css <= resources!css/reveal-tweaks.css",
+        "js/bgimage-helper.js <= resources!js/bgimage-helper.js",
+        "css/bgimage-helper.css <= resources!css/bgimage-helper.css"
+    ]
+}

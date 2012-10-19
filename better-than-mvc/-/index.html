@@ -1,0 +1,330 @@
+<!doctype html>  
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Better Than MVC</title>
+
+<meta name="description" content="An easy to use CSS 3D slideshow tool for quickly creating good looking HTML presentations.">
+<meta name="author" content="Hakim El Hattab">
+
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="css/pres.style.css" /><link rel="stylesheet" type="text/css" href="css/highlight.zenburn.css" /><script src="js/jquery.min.js"></script><script src="js/head.min.js"></script><link rel="stylesheet" type="text/css" href="css/reveal.css" /><link rel="stylesheet" type="text/css" href="css/theme/default.css" /><link rel="stylesheet" type="text/css" href="css/reveal-tweaks.css" /><link rel="stylesheet" type="text/css" href="css/bgimage-helper.css" />
+</head>
+<body>
+<div class="reveal">
+	<!-- Used to fade in a background when a specific slide state is reached -->
+	<div class="state-background"></div>
+	
+	<!-- Any section element inside of this container is displayed as a slide -->
+	<div class="slides">
+	    
+        <section data-bg="images/5077082983_dbc6a04a43_b.jpg"data-attribution="http://www.flickr.com/photos/42429527@N03/5077082983/">
+        	<h1>Better Than MVC</h1>
+
+
+        </section>
+        
+        <section >
+        	<h2>Overview</h2><ul><li class="fragment">A quick overview of MVC</li><li class="fragment">What is good and bad about MVC</li><li class="fragment">Alternative approaches</li></ul>
+
+
+        </section>
+        
+        <section >
+        	<h2>The State of MV*</h2><ul><li class="fragment">So many JS MV* frameworks available</li><li class="fragment">Each has a slightly different approach</li><li class="fragment">"Why is it so?"</li></ul>
+
+
+        </section>
+        
+        <section >
+        	<h2>MVC is:</h2><ul><li class="fragment">A design pattern that describes how a <strong>Model, View </strong>and <strong>Controller </strong>should interact to create a structured application.</li><li class="fragment">Original implementation -> Smalltalk-80 MVC (conceived in 1978).</li></ul>
+
+
+        </section>
+        
+        <section >
+        	<h2>MVC isn't:</h2><ul><li class="fragment">A hash / history API routing engine</li><li class="fragment">A synchronization engine for your clientside data and your server-side (real) data</li><li class="fragment">A Data Binding approach</li><li class="fragment">A pattern for helping you compose your large application from smaller modules</li></ul>
+
+
+        </section>
+        
+        <section >
+        	<h2>Clientside MVC</h2>
+<h1>The Good</h1>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>It&#39;s a structured approach</h2>
+<p>One of the main reasons people <strong>advocate</strong> using an MVC framework is that it helps to prevent your application turning into <em>spaghetti code</em>.
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>A Proven Pattern</h2>
+<p>MVC is a proven pattern, and there is a lot of existing knowledge on how to implement it.
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Clientside MVC</h2>
+<h1>The Bad</h1>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>MVC is Misunderstood</h2><blockquote>There are over 40 JavaScript MVC frameworks to help.
+... many of which don't use MVC.</blockquote><cite><a href="http://addyosmani.com/blog/digesting-javascript-mvc-pattern-abuse-or-evolution/">Addy Osmani</a></cite>
+
+
+        </section>
+        
+        <section >
+        	<h2>It&#39;s a Square Peg</h2>
+<ul>
+<li>MVC is a pattern that is best suited to a particular type of application (which admittedly are quite common) and interaction pattern.</li>
+<li>Bending the MVC patterns to fit applications that miss the sweet spot isn&#39;t a good idea.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Tight Coupling</h2>
+<ul>
+<li>Most MVC frameworks are very declarative in the parts of the system are made to talk to each other.</li>
+<li>While apps written like this are usually easy to comprehend, it&#39;s a pattern that limits extensibility.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Noise</h2>
+<ul>
+<li><p>The ability of clientside MVC (or MV*) to provide a portable, reusable pattern for web application development across different software projects and employers is limited.</p>
+</li>
+<li><p>Knowledge and experience in a single framework (e.g. Backbone, Angular), however, would be portable.</p>
+</li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Clientside MVC</h2>
+<h1>The Ugly</h1>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Some Frameworks Encourage HTML Abuse</h2>
+<p>Sometimes I feel like I&#39;m the only person in the world who thinks the use of inline <code>&lt;script&gt;</code> tags to provide client-side templates is messy and wrong.
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>On Inlining Templates</h2><blockquote>Embedding scripts in your page that have a unknown content-type (such is the case here - the browser doesn't know how to execute a text/html script) are simply ignored by the browser - and by search engines and screenreaders. It's a perfect cloaking device for sneaking templates into your page.</blockquote><cite><a href="http://ejohn.org/blog/javascript-micro-templating/">John Resig</a></cite><blockquote class="fragment">I like to use this technique for quick-and-dirty cases where I just need a little template or two on the page and want something light and fast.</blockquote>
+
+
+        </section>
+        
+        <section >
+        	<h1>Alternatives to MVC</h1>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Use MVC, But Rage against Frameworks</h2><ul><li>Look for good standalone libraries that provide comparable functionality to what you get in the framework.</li><li class="fragment">While this is easy for some components, it's really hard (almost impossible) with other parts.</li></ul>
+
+
+        </section>
+        
+        <section data-bg="images/2858932924_c58d067f90_o.jpg"data-attribution="http://www.flickr.com/photos/billward/2858932924/sizes/l/in/photostream/">
+        	<h1>Message Bus</h1>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Eve</h2>
+<p>Very simple, decoupled handler to keep the UI in sync with the data:
+
+</p>
+<pre><code class="javascript">eve.on('todolist.refresh', function(todos) { 
+  $('ul.todos').html(template(items));
+});</pre></code>
+
+</p>
+
+
+
+        </section>
+        
+        <section data-bg="images/4812542623_36e6082f15_o.jpg"data-attribution="http://www.flickr.com/photos/nasawebbtelescope/4812542623/sizes/l/in/photostream/">
+        	<h1>Cryogenics</h1>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Future Developments</h2>
+<ul>
+<li><p><code>Object.observe</code>
+<a href="http://weblog.bocoup.com/javascript-object-observe/">Article</a> <a href="http://wiki.ecmascript.org/doku.php?id=harmony:observe">Spec</a></p>
+</li>
+<li><p><a href="http://mdv.googlecode.com/git/docs/design_intro.html">Model Driven Views</a></p>
+</li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h1>TodoMVC</h1>
+<h2>Educate Yourself</h2>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>What is TodoMVC?</h2>
+<ul>
+<li>An ambitious project from <a href="https://github.com/addyosmani">Addy Osmani</a> and <a href="https://github.com/sindresorhus">Sindre Sorhous</a> to compare MV* frameworks using a common baseline - a simple Todo web application.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Primary Frameworks</h2>
+<ul>
+<li><a href="http://documentcloud.github.com/backbone">Backbone</a></li>
+<li><a href="http://emberjs.com/">Ember</a></li>
+<li><a href="http://angularjs.org/">AngularJS</a></li>
+<li><a href="http://spinejs.com/">Spine</a></li>
+<li><a href="http://knockoutjs.com/">KnockoutJS</a></li>
+<li><a href="http://dojotoolkit.org/">Dojo</a></li>
+<li><a href="http://yuilibrary.com/">YUI</a></li>
+<li><a href="http://batmanjs.org/">Batman.js</a></li>
+<li><a href="http://code.google.com/closure/library/">Closure</a></li>
+<li><a href="http://agilityjs.com/">Agility.js</a></li>
+<li><a href="http://kmalakoff.github.com/knockback">Knockback.js</a></li>
+<li><a href="https://developers.google.com/web-toolkit/">GWT</a></li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Summary</h2><ul><li class="fragment">Building Web Applications with a Rich Client is challenging</li><li class="fragment">In general, client side devs struggle with sensible and reusable application composition</li><li class="fragment">While client-side MVC frameworks are a pragmatic approach to building apps, they don't deal with the underlying problems or are very future focused.</li></ul>
+
+
+        </section>
+        
+        <section >
+        	<h2>Thanks</h2>
+<ul>
+<li>Feel free to heckle on twitter (<a href="http://twitter.com/DamonOehlman">@DamonOehlman</a>)</li>
+<li>Code:  <a href="https://github.com/DamonOehlman">https://github.com/DamonOehlman</a><ul>
+<li><a href="https://github.com/DamonOehlman/partybus">PartyBus</a> - <code>Object.observe =&gt; eve</code></li>
+</ul>
+</li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Further Reading</h2>
+<ul>
+<li><p><a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#detailmvcmvp">Learning JavaScript Design Patterns</a></p>
+</li>
+<li><p><a href="http://addyosmani.com/blog/digesting-javascript-mvc-pattern-abuse-or-evolution/">Digesting JavaScript MVC - Pattern Abuse or Evolution</a></p>
+</li>
+</ul>
+
+
+
+        </section>
+        
+	</div>
+
+	<!-- The navigational controls UI -->
+	<aside class="controls">
+		<a class="left" href="#">&#x25C4;</a>
+		<a class="right" href="#">&#x25BA;</a>
+		<a class="up" href="#">&#x25B2;</a>
+		<a class="down" href="#">&#x25BC;</a>
+	</aside>
+
+	<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+	<div class="progress"><span></span></div>
+</div>
+<script src="js/pres.js"></script><script src="js/highlight.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="js/reveal.js"></script><script src="js/bgimage-helper.js"></script>
+<script>
+	// Parse the query string into a key/value object
+	var query = {};
+	location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+		query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+	} );
+
+	Reveal.initialize({
+		// Display controls in the bottom right corner
+		controls: true,
+
+		// Display a presentation progress bar
+		progress: true,
+
+		// If true; each slide will be pushed to the browser history
+		history: true,
+
+		// Loops the presentation, defaults to false
+		loop: false,
+
+		// Flags if mouse wheel navigation should be enabled
+		mouseWheel: true,
+
+		// Apply a 3D roll to links on hover
+		rollingLinks: true,
+
+		// UI style
+		theme: query.theme || 'default', // default/neon
+
+		// Transition style
+		transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+	});
+</script>
+</body>
+</html>
