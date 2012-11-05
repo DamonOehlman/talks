@@ -1,0 +1,36 @@
+{
+    "title": "Taskify all the things",
+    "template": "reveal.js",
+
+    "sources": [
+        "async-overview.md",
+        "taskify.md"
+    ],
+
+    "aliases": {
+        "resources": "github://DamonOehlman/talk-resources/"
+    },
+
+    "includes": {
+        "head": [
+            "css/pres.style.css"
+        ],
+
+        "body": [
+            "js/pres.js"
+        ]
+    },
+
+    "theme": "dark",
+    "plugins": {
+        "code": {
+            "style": "zenburn"
+        }
+    },
+
+    "resources": [
+        "css/reveal-tweaks.css <= resources!css/reveal-tweaks.css",
+        "js/bgimage-helper.js <= resources!js/bgimage-helper.js",
+        "css/bgimage-helper.css <= resources!css/bgimage-helper.css"
+    ]
+}

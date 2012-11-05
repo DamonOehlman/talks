@@ -1,0 +1,344 @@
+<!doctype html>  
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Taskify all the things</title>
+
+<meta name="description" content="An easy to use CSS 3D slideshow tool for quickly creating good looking HTML presentations.">
+<meta name="author" content="Hakim El Hattab">
+
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="css/pres.style.css" /><link rel="stylesheet" type="text/css" href="css/highlight.zenburn.css" /><script src="js/jquery.min.js"></script><script src="js/head.min.js"></script><link rel="stylesheet" type="text/css" href="css/reveal.css" /><link rel="stylesheet" type="text/css" href="css/theme/default.css" /><link rel="stylesheet" type="text/css" href="css/reveal-tweaks.css" /><link rel="stylesheet" type="text/css" href="css/bgimage-helper.css" />
+</head>
+<body>
+<div class="reveal">
+	<!-- Used to fade in a background when a specific slide state is reached -->
+	<div class="state-background"></div>
+	
+	<!-- Any section element inside of this container is displayed as a slide -->
+	<div class="slides">
+	    
+        <section >
+        	<h1>Taskify</h1>
+<h2>All the things</h2>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Overview</h2>
+<ul>
+<li>Why Async is awesome, but challenging / messy</li>
+<li>Callback passing style vs Promises</li>
+<li>Taskify - Why, What and How</li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Async is Awesome</h2>
+<ul>
+<li>Async operations provide deferred execution capabilities in a single threaded environment.</li>
+<li>Allows you to make optimal use of computing resources while avoiding the pickle of thread deadlock, etc.</li>
+<li>In all but a few situations I will strongly advocate for using async operations where-ever possible.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Async can be messy</h2>
+<p>&quot;Callback hell&quot; is one of the modern programming hells:
+
+</p>
+<pre><code class="javascript">function getPhoto(tag, handlerCallback) {
+    asyncGet(requestTag(tag), function(photoList) {
+        asyncGet(requestOneFrom(photoList), function(photoSizes) {
+            handlerCallback(sizesToPhoto(photoSizes));
+        });
+    });
+}
+
+getPhoto('tokyo', drawOnScreen);</pre></code>
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Discipline and Helper Libraries to the Rescue</h2>
+<ul>
+<li><p>Be disciplined about creating discrete functions to handle callbacks.  This reduces depth of nesting.</p>
+</li>
+<li><p>Utilize helper libraries such as <a href="https://github.com/caolan/async">caolan/async</a> to help compose asynchronous operations.</p>
+</li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Async Example</h2>
+<pre><code class="javascript">async.series([
+    steelmesh.connect.bind(steelmesh),
+    monitor.start.bind(monitor),
+    apploader.run.bind(apploader)
+], function(err) {
+    if (err) {
+        out('!{red}{0}', err);
+        return process.exit();
+    }
+
+    out('!{green}steelmesh started');
+    meshEvents('status', 'online');
+});</pre></code>
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Async Operations</h2>
+<p>There are many, many async helper functions:
+
+</p>
+<ul>
+<li><strong>Collections</strong>: forEach, map, filter, reject, reduce, detect, sortBy, some, every, concat</li>
+<li><strong>Control Flow</strong>: series, parallel, whilst, until, waterfall, queue, auto, iterator, apply, nextTick</li>
+<li><strong>Utils</strong>: memoize, unmemoize, log, dir, noConflict</li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Promises to the Rescue</h2>
+<ul>
+<li>Some developers prefer using promises over callbacks.</li>
+<li>A promise is an object that represents a deferred execution state, which can be <strong>accept</strong>ed or <strong>reject</strong>ed to flag completion or failure of the async operation.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Promises Example</h2>
+<pre><code class="javascript">getTweetsFor("domenic") // promise-returning async function
+    .then(function (tweets) {
+        var shortUrls = parseTweetsForUrls(tweets);
+        var mostRecentShortUrl = shortUrls[0];
+        return expandUrlUsingTwitterApi(mostRecentShortUrl); // promise-returning async function
+    })
+    .then(doHttpRequest) // promise-returning async function
+    .then(
+        function (responseBody) {
+            console.log("Most recent link text:", responseBody);
+        },
+        function (error) {
+            console.error("Error with the twitterverse:", error);
+        }
+    );</pre></code>
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Information on Promises</h2>
+<p>Some good reading on promises:
+
+</p>
+<ul>
+<li><a href="https://gist.github.com/3889970">You&#39;re missing the point of promises</a></li>
+<li><a href="https://github.com/gladiusjs/gladius-core/issues/127">Refactor asynchronous code to use promises instead of callbacks</a></li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Promises vs Callbacks</h2>
+<p>My <em>general</em> rule is:
+
+</p>
+<p>If you are writing a library then you should probably favour a callback passing style over implementing promises.  This increases the portability of your library and does not enforce your pattern preferences on other developers.  
+
+</p>
+<p>If you are writing an application then choose your poison.
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h1>Task Centric Development</h1>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Taskify: What is a Task?</h2>
+<ul>
+<li>An atomic unit of work, either synchronous or asynchronous.</li>
+<li>May have one or more pre-requesites to execution.</li>
+<li>Similar conceptually to tasks in <a href="https://github.com/mde/jake">jake</a> and <a href="https://github.com/gruntjs/grunt">grunt</a>.</li>
+<li>Not similar to Mozilla&#39;s experimental <a href="https://taskjs.org">task.js</a> library.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Taskify: Why?</h2>
+<ul>
+<li><p>Because async coding can feel messy, and some of my application code didn&#39;t feel as clean as my <a href="https://github.com/mde/jake">jake</a> builds.</p>
+</li>
+<li><p>Experiment with flipping execution control to dependencies rather than execution order.</p>
+</li>
+<li><p>Usable now in both node and modern browsers.</p>
+</li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Taskify: Simple Example</h2>
+<pre><code class="javascript">var taskify = require('../'),
+    request = require('request');
+
+taskify('a', function() {
+    console.log('a');
+});
+
+taskify('b', ['a'], function() {
+    request.get('http://www.google.com/', this.async());
+});
+
+taskify.run('b').once('complete', function() {
+    console.log('done');
+});</pre></code>
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Taskify: Simple Principles</h2>
+<ul>
+<li>Specify dependencies using optional second argument.</li>
+<li>To flag a task as async make the <code>this.async</code> call within the task runner - provides the callback function to resolve execution (follows familiar node callback style pattern).</li>
+<li>Task runner results are made available in execution context results object: <code>this.context.results</code></li>
+<li>When calling <code>taskify.run</code> optional arguments are passed through to the task runners.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section >
+        	<h2>Taskify: Suprise Example</h2>
+<pre><code class="javascript">var taskify = require('taskify'),
+    app = require('tako')();
+
+// define a task that tells us the twitter handle of the user
+taskify('writeHandle', ['auth'], function(req, res) {
+    res.end(this.context.user.twitterHandle);
+});
+
+// define a task that says hi
+taskify('sayHi', function(req, res) {
+    res.end('hi');
+});
+
+// wire up the application routes
+app.route('/hi', taskify.select('sayHi'));
+app.route('/handle', taskify.select('writeHandle'));</pre></code>
+
+</p>
+
+
+
+        </section>
+        
+        <section >
+        	<h3>Fork the Source</h3>
+<p><a href="http://github.com/DamonOehlman/taskify">http://github.com/DamonOehlman/taskify</a>
+
+</p>
+
+
+
+        </section>
+        
+	</div>
+
+	<!-- The navigational controls UI -->
+	<aside class="controls">
+		<a class="left" href="#">&#x25C4;</a>
+		<a class="right" href="#">&#x25BA;</a>
+		<a class="up" href="#">&#x25B2;</a>
+		<a class="down" href="#">&#x25BC;</a>
+	</aside>
+
+	<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+	<div class="progress"><span></span></div>
+</div>
+<script src="js/pres.js"></script><script src="js/highlight.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="js/reveal.js"></script><script src="js/bgimage-helper.js"></script>
+<script>
+	// Parse the query string into a key/value object
+	var query = {};
+	location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+		query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+	} );
+
+	Reveal.initialize({
+		// Display controls in the bottom right corner
+		controls: true,
+
+		// Display a presentation progress bar
+		progress: true,
+
+		// If true; each slide will be pushed to the browser history
+		history: true,
+
+		// Loops the presentation, defaults to false
+		loop: false,
+
+		// Flags if mouse wheel navigation should be enabled
+		mouseWheel: true,
+
+		// Apply a 3D roll to links on hover
+		rollingLinks: true,
+
+		// UI style
+		theme: query.theme || 'default', // default/neon
+
+		// Transition style
+		transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+	});
+</script>
+</body>
+</html>
