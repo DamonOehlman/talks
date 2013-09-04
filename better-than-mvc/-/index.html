@@ -59,9 +59,7 @@
         
         <section >
         	<h2>It&#39;s a structured approach</h2>
-<p>One of the main reasons people <strong>advocate</strong> using an MVC framework is that it helps to prevent your application turning into <em>spaghetti code</em>.
-
-</p>
+<p>One of the main reasons people <strong>advocate</strong> using an MVC framework is that it helps to prevent your application turning into <em>spaghetti code</em>.</p>
 
 
 
@@ -69,9 +67,7 @@
         
         <section >
         	<h2>A Proven Pattern</h2>
-<p>MVC is a proven pattern, and there is a lot of existing knowledge on how to implement it.
-
-</p>
+<p>MVC is a proven pattern, and there is a lot of existing knowledge on how to implement it.</p>
 
 
 
@@ -137,9 +133,7 @@
         
         <section >
         	<h2>Some Frameworks Encourage HTML Abuse</h2>
-<p>Sometimes I feel like I&#39;m the only person in the world who thinks the use of inline <code>&lt;script&gt;</code> tags to provide client-side templates is messy and wrong.
-
-</p>
+<p>Sometimes I feel like I&#39;m the only person in the world who thinks the use of inline <code>&lt;script&gt;</code> tags to provide client-side templates is messy and wrong.</p>
 
 
 
@@ -180,17 +174,11 @@
         <section >
         	<h2>Eve</h2>
 <h3>Reactive UI</h3>
-<p>Very simple, decoupled handler to keep the UI in sync with the data:
-
-</p>
+<p>Very simple, decoupled handler to keep the UI in sync with the data:</p>
 <pre><code class="javascript">eve.on('todolist.refresh', function(todos) { 
   $('ul.todos').html(template(items));
 });</pre></code>
-
-</p>
-<p>Personally, I feel more comfortable using this technique that using automatic UI/View bindings.
-
-</p>
+<p>Personally, I feel more comfortable using this technique that using automatic UI/View bindings.</p>
 
 
 
@@ -199,14 +187,10 @@
         <section >
         	<h2>Eve</h2>
 <h3>Decoupled &quot;Controller&quot; Actions</h3>
-<p>Using appropriate event namespacing with eve can provide flexible decoupled handling of application actions:
-
-</p>
+<p>Using appropriate event namespacing with eve can provide flexible decoupled handling of application actions:</p>
 <pre><code class="javascript">eve.on('todolist.add.todo', function(todo) {
   // save the todo to the context appropriate storage
 });</pre></code>
-
-</p>
 
 
 
@@ -215,10 +199,7 @@
         <section >
         	<h2>Eve</h2>
 <h3>Event Handler Priority</h3>
-<p>Eve supports the ability to register a handler in a particular priority order.  For example, it is extremely simple to wire in validation for our add todo event:
-
-
-</p>
+<p>Eve supports the ability to register a handler in a particular priority order.  For example, it is extremely simple to wire in validation for our add todo event:</p>
 <pre><code class="javascript">// wire in a "before" other actions event handler
 eve.on('todolist.add.todo', function(todo) {
   // validate the todo
@@ -230,8 +211,6 @@ eve.on('todolist.add.todo', function(todo) {
   }
 })(-1);</pre></code>
 
-</p>
-
 
 
         </section>
@@ -239,9 +218,7 @@ eve.on('todolist.add.todo', function(todo) {
         <section >
         	<h2>Eve</h2>
 <h3>Wildcard Handling</h3>
-<p>Wildcard matching provides the ability to events matching a particular pattern with a centralized handler:
-
-</p>
+<p>Wildcard matching provides the ability to events matching a particular pattern with a centralized handler:</p>
 <pre><code class="javascript">eve.on('todolist.add.*', function(data) {
   // get the validation rules based on the type of data being added
   var vRules = rules[eve.nt().split('.')[2]],
@@ -252,8 +229,6 @@ eve.on('todolist.add.todo', function(todo) {
     eve.stop();
   }
 })(-1);</pre></code>
-
-</p>
 
 
 
@@ -268,9 +243,7 @@ eve.on('todolist.add.todo', function(todo) {
         
         <section >
         	<h2>Future Developments</h2>
-<p>There is some great stuff coming down the pipe that makes an MVCesque approach more sensible.
-
-</p>
+<p>There is some great stuff coming down the pipe that makes an MVCesque approach more sensible.</p>
 <ul>
 <li><p><code>Object.observe</code>
 <a href="http://weblog.bocoup.com/javascript-object-observe/">Article</a> <a href="http://wiki.ecmascript.org/doku.php?id=harmony:observe">Spec</a></p>
