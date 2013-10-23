@@ -18,7 +18,7 @@
   "author": "Damon Oehlman <damon.oehlman@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "decker": "0.0.3",
+    "shazam": "~0.2.0",
     "brfs": "0.0.8"
   },
   "browserify": {
