@@ -1,0 +1,29 @@
+{
+  "name": "talk-hoodie",
+  "version": "0.0.0",
+  "description": "A lightning talk for SydJS on Hoodie",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/DamonOehlman/talk-hoodie.git"
+  },
+  "keywords": [
+    "sydjs",
+    "talk"
+  ],
+  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "decker": "0.0.3",
+    "brfs": "0.0.8"
+  },
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
+  }
+}
