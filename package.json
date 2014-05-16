@@ -27,6 +27,7 @@
     "defaultcss": "0.0.2"
   },
   "devDependencies": {
+    "beefy": "^1",
     "blockdown": "~0.4",
     "brfs": "^1",
     "browserify": "^4",
