@@ -1,23 +1,37 @@
 {
   "name": "talks-damonoehlman",
-  "description": "Talks about Javascript, HTML5, Node, etc",
-  "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
-  "tags": [ "html5" ],
-  "version": "0.0.1",
-  "private": "true",
-
-  "devDependencies": {
-    "attachmate": "0.1.x",
-    "jade": "*"
+  "version": "0.0.0",
+  "description": "If I'm talking about anything (presenting), then the content probably ends up here",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "rm -rf bundle.js && npm run-script gendocs && beefy index.js:bundle.js -- -t brfs",
+    "bundle": "rm -rf bundle.js && gendocs > README.md && browserify index -t brfs > bundle.js"
   },
-
   "repository": {
     "type": "git",
-    "url": "git://github.com/DamonOehlman/talks.git"
+    "url": "https://github.com/DamonOehlman/talks.git"
   },
+  "keywords": [
+    "presentation"
+  ],
+  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
+  "license": "Creative Commons",
   "bugs": {
-    "url": "http://github.com/DamonOehlman/talks/issues"
+    "url": "https://github.com/DamonOehlman/talks/issues"
   },
-  
-  "contributors": []
+  "homepage": "https://github.com/DamonOehlman/talks",
+  "dependencies": {
+    "pull-stream": "^2",
+    "defaultcss": "0.0.2"
+  },
+  "devDependencies": {
+    "injectcode": "~0.2",
+    "blockdown": "~0.4",
+    "decker": "~0.1",
+    "brfs": "^1",
+    "stylify": "~0.1",
+    "insert-css": "~0.1"
+  }
 }
