@@ -1,0 +1,45 @@
+html, body, article.decker, article.decker section {
+  background: #e8e8e8;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a, a:visited {
+  color: gray;
+}
+
+pre {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px 0 0 20px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  padding: 20px 20px 20px 40px;
+  font-family: 'Source Code Pro';
+  margin: 0 0 10px;
+}
+
+article.decker section:nth-child(1) {
+/*   background: black; */
+}
+
+img[src$=svg] {
+  height: 70%;
+  margin: 5% auto;
+  display: block;
+}
+
+small.attribution::before {
+  content: 'icon: ';
+  color: rgba(0, 0, 0, 0.1);
+}
+
+small.attribution {
+  color: rgba(0, 0, 0, 0.2);
+  display: block;
+  text-align: center;
+  font-size: 0.7em;
+  width: 100%;
+}
+
+small.me {
+  display: block;
+
+}

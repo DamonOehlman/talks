@@ -1,0 +1,1 @@
+var bytes = new Buffer([0x0, 0xFF]);

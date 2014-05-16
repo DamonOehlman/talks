@@ -1,0 +1,30 @@
+{
+  "name": "d3-cpu",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A simple example demonstrating stream composition",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DamonOehlman/streaming-the-web.git"
+  },
+  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DamonOehlman/streaming-the-web/issues"
+  },
+  "homepage": "https://github.com/DamonOehlman/streaming-the-web",
+  "dependencies": {
+    "d3": "^3",
+    "levelup": "^0.18.2",
+    "leveldown": "^0.10.2",
+    "pull-level": "^1.1.10",
+    "pull-sse": "~0.4",
+    "pull-stream": "^2.22.0",
+    "level-sublevel": "^5.2.0",
+    "whisk": "~0.6"
+  }
+}
