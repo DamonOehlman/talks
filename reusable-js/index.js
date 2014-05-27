@@ -10,15 +10,9 @@ document.body.appendChild(deck.render());
 
 /**
 
-  # Hello
+  <<< sections/intro.md
 
   --
 
-  # There
-
-  --
-
-  # How to skin a cat
-
-
+  <<< sections/quest-for-reusability.md
 **/

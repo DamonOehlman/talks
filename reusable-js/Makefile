@@ -10,12 +10,9 @@ gendocs:
 	@echo "generating readme"
 	@$(NPMBIN)/gendocs > README.md
 
-dev: clean gendocs
-	make watch &
-	@$(NPMBIN)/beefy index.js:bundle.js -- -t brfs
-
-watch:
-	inotifywait -e modify index.js && make gendocs && make watch
-
 bundle: clean gendocs
-	$(NPMBIN)/browserify index -t brfs > bundle.js
+	$(NPMBIN)/browserify index.js -t brfs > bundle.js
+
+dev: bundle
+	st --port 8000 --no-cache &
+	while true; do inotifywait -e modify index.js sections/*.md && make bundle; done
