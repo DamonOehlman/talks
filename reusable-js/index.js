@@ -15,4 +15,8 @@ document.body.appendChild(deck.render());
   --
 
   <<< sections/quest-for-reusability.md
+
+  --
+
+  <<< sections/getting-practical.md
 **/

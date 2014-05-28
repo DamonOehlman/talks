@@ -85,5 +85,6 @@ __Cons:__
 
 ## Lessons Learned from the Journey (so far)
 
-- Prioritize development process and modularisation over making a universally "requirable" module (i.e. [UMDjs](https://github.com/umdjs/umd)).
--
+- It's more important to prioritize development process and modularisation over making a universally "requirable" module (i.e. [UMDjs](https://github.com/umdjs/umd)).
+- Client side modules and NPM do mix well, versioning is awesome.
+- While a git repo could be effectively versioned, you can't trust a package author as far as you can throw them. Package managers must enforce versioning and handle publishing.

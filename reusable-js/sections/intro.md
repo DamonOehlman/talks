@@ -1,5 +1,9 @@
 # Reusable JS
 
+![](icons/icon_3395/icon_3395.svg)
+
+<small class="attribution">Lego designed by jon trillana from the Noun Project</small>
+
 --
 
 ## Defining the Problem
