@@ -19,4 +19,9 @@ document.body.appendChild(deck.render());
   --
 
   <<< sections/getting-practical.md
+
+  --
+
+  <<< sections/summary.md
+
 **/

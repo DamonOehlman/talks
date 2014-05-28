@@ -1,0 +1,23 @@
+{
+  "name": "test-project",
+  "version": "0.0.1",
+  "description": "A Test project",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/all.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DamonOehlman/test-project.git"
+  },
+  "keywords": [
+    "example",
+    "project"
+  ],
+  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DamonOehlman/test-project/issues"
+  },
+  "homepage": "https://github.com/DamonOehlman/test-project"
+}

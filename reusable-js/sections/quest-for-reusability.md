@@ -1,7 +1,16 @@
-## My Personal Quest for Reusability
+# The Quest for Reusability
+
+![](icons/icon_45240/icon_45240.svg)
+
+<small class="attribution">Mountain Climbing designed by johanna from the Noun Project</small>
+
+--
+
+## My Personal Goals
 
 - Wanted to consider what I had experienced in other langs
 - Also wanted to adopt an "environment appropriate" approaches
+- Started about 4 years ago, and when through a number of stages
 
 --
 
@@ -63,7 +72,7 @@ __Cons:__
 ## Stage 3: "Learning to love Browserify"
 
 - Browserify V2 released which refined the approach of Browserify V1, and was no longer trying to bootstrap a node environment in the browser.
-- Modules can be consumed from standard node modules, and thus [NPM](https://npmjs.org) can he used for package distribution.
+- Modules can be consumed from standard node modules, and thus [npm](https://npmjs.org) can he used for package distribution.
 - Saw browserify in action with [voxel.js](http://voxeljs.com/) and was blown away.
 
 --
@@ -83,8 +92,10 @@ __Cons:__
 
 --
 
-## Lessons Learned from the Journey (so far)
+## Lessons Learned from the Journey
 
 - It's more important to prioritize development process and modularisation over making a universally "requirable" module (i.e. [UMDjs](https://github.com/umdjs/umd)).
-- Client side modules and NPM do mix well, versioning is awesome.
+- Client side modules and npm do mix well, versioning is awesome.
 - While a git repo could be effectively versioned, you can't trust a package author as far as you can throw them. Package managers must enforce versioning and handle publishing.
+
+I'm sure there will be more...

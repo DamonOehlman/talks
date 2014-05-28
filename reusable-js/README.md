@@ -23,10 +23,19 @@
 
 --
 
-## My Personal Quest for Reusability
+# The Quest for Reusability
+
+![](icons/icon_45240/icon_45240.svg)
+
+<small class="attribution">Mountain Climbing designed by johanna from the Noun Project</small>
+
+--
+
+## My Personal Goals
 
 - Wanted to consider what I had experienced in other langs
 - Also wanted to adopt an "environment appropriate" approaches
+- Started about 4 years ago, and when through a number of stages
 
 --
 
@@ -88,7 +97,7 @@ __Cons:__
 ## Stage 3: "Learning to love Browserify"
 
 - Browserify V2 released which refined the approach of Browserify V1, and was no longer trying to bootstrap a node environment in the browser.
-- Modules can be consumed from standard node modules, and thus [NPM](https://npmjs.org) can he used for package distribution.
+- Modules can be consumed from standard node modules, and thus [npm](https://npmjs.org) can he used for package distribution.
 - Saw browserify in action with [voxel.js](http://voxeljs.com/) and was blown away.
 
 --
@@ -108,16 +117,22 @@ __Cons:__
 
 --
 
-## Lessons Learned from the Journey (so far)
+## Lessons Learned from the Journey
 
 - It's more important to prioritize development process and modularisation over making a universally "requirable" module (i.e. [UMDjs](https://github.com/umdjs/umd)).
-- Client side modules and NPM do mix well, versioning is awesome.
+- Client side modules and npm do mix well, versioning is awesome.
 - While a git repo could be effectively versioned, you can't trust a package author as far as you can throw them. Package managers must enforce versioning and handle publishing.
+
+I'm sure there will be more...
 
 
 --
 
 # Getting Practical
+
+![](icons/icon_4851/icon_4851.svg)
+
+<small class="attribution">Saw designed by jon trillana from the Noun Project</small>
 
 --
 
@@ -151,6 +166,79 @@ exports.mul = function(a, b) {
 
 --
 
+## Create a `package.json` file
+
+The best way to do this is through using the `npm init` command:
+
+```
+~ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sane defaults.
+
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg> --save` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+name: (test-project)
+version: (0.0.0)
+description: A Test project
+entry point: (index.js)
+test command: node test/all.js
+git repository: https://github.com/DamonOehlman/test-project.git
+keywords: example,project
+author: Damon Oehlman <damon.oehlman@gmail.com>
+license: (ISC) MIT
+~
+```
+
+--
+
+## Tweak the `package.json` file as required
+
+```json
+{
+  "name": "test-project",
+  "version": "0.0.1",
+  "description": "A Test project",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/all.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DamonOehlman/test-project.git"
+  },
+  "keywords": [
+    "example",
+    "project"
+  ],
+  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DamonOehlman/test-project/issues"
+  },
+  "homepage": "https://github.com/DamonOehlman/test-project"
+}
+
+```
+
+--
+
+## Publishing to npm
+
+```
+~ npm version 0.0.1
+v0.0.1
+~ npm publish
+```
+
+This will kick off a publishing process to npm.  If you haven't already got a user account for npm, then you will need to follow the [npm-adduser](https://www.npmjs.org/doc/cli/npm-adduser.html) instructions.
+
+--
+
 ## Browserify for the Web
 
 Browserifying files is most easily done at a command-line level. For example you can browserify and then uglify code in a single command:
@@ -165,11 +253,21 @@ Using a transform such as [brfs](https://github.com/substack/brfs):
 browserify -d main.js -t brfs > main.bundled.js | uglify
 ```
 
-More information: [browserify-handbook](https://github.com/substack/browserify-handbook)
+--
+
+## Browserify handbook
+
+While documentation for browserify has been somewhat scarce in the past, [@substack](https://twitter.com/substack) has now put together an awesome handbook which covers a lot of great stuff:
+
+[browserify-handbook](https://github.com/substack/browserify-handbook)
 
 --
 
 # Functions, Functions, Functions
+
+![](icons/icon_24030/icon_24030.svg)
+
+<small class="attribution">Algebra designed by Ilsur Aptukov from the Noun Project</small>
 
 --
 
@@ -317,4 +415,25 @@ pull(
 );
 
 ```
+
+
+--
+
+# Summary
+
+--
+
+## Striving for Reuse is a Journey
+
+- Retrofitting these approaches to a current project is __not__ likely to work.
+- Important to think about modularity and reusability as you move forward.
+- Search for existing reusable code before writing your own (this can be tricky, but module search will improve)
+
+--
+
+## Good Examples of Reusable Modules
+
+Listed below are a few that I think are well done:
+
+- [montagejs/collections](https://github.com/montagejs/collections)
 
