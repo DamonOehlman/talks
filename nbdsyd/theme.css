@@ -1,0 +1,75 @@
+html, body, article.decker, article.decker section {
+  background: -webkit-radial-gradient(center, circle cover, #d6ba32 0%, #ffd93d 100%);
+  font-family: 'Montserrat', sans-serif;
+}
+
+a, a:visited {
+  color: gray;
+}
+
+pre {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px 0 0 20px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  padding: 20px 20px 20px 40px;
+  font-family: 'Source Code Pro';
+  margin: 0 0 10px;
+}
+
+article.decker section:nth-child(1) {
+/*   background: black; */
+}
+
+img[src$=svg] {
+  height: 70%;
+  margin: 5% auto;
+  display: block;
+}
+
+img[src$=locations\.png] {
+  width: 100%;
+  object-fit: contain;
+}
+
+small.attribution::before {
+  content: 'icon: ';
+  color: rgba(0, 0, 0, 0.1);
+}
+
+small.attribution {
+  color: rgba(0, 0, 0, 0.2);
+  display: block;
+  text-align: center;
+  font-size: 0.7em;
+  width: 100%;
+}
+
+small.me {
+  display: block;
+
+}
+
+table {
+  font-size: 1.0em;
+  margin-top: 20px;
+  width: 100%;
+}
+
+table th {
+  text-align: left;
+  border-bottom: 2px solid rgba(30, 30, 30, 0.3);
+}
+
+table td, table th {
+  padding: 5px;
+}
+
+table td:first-child {
+  font-family: monospace;
+  padding-right: 20px;
+  white-space: pre;
+}
+
+table tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.1);
+}
