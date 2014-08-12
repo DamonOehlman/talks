@@ -1,0 +1,5 @@
+# Liberating Data with the Realtime Web
+
+With an increasing amount of previously closed datasets becoming available to us as developers, we have more opportunities to "set that data" free in different ways.  One of the most accessible ways to do this is through the browser, but often working out how to get data into that environment can feel overwhelming.  In this talk, Damon will walk through a variety of tools and techniques that developers can use to liberate data from proprietary formats into formats better understood by the browser.  We will also look at some realtime technologies such as WebSockets, Server-Sent Events and WebRTC data channels to deliver that data over the wire in efficient and resuable ways.
+
+While there will be a little "wow factor" thanks to WebGL and data visualisation libraries such as D3, this is primarily a talk focused on how we move and transform data ready to do amazing things. As a developer you'll leave better equipped to tackle that next "get my data to the browser" project or open-data hackathon!
