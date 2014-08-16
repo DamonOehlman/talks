@@ -18,8 +18,8 @@
   "author": "Damon Oehlman <damon.oehlman@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "shazam": "~0.2.0",
-    "brfs": "0.0.8"
+    "brfs": "^1.2.0",
+    "shazam": "^0.3.2"
   },
   "browserify": {
     "transform": [

@@ -3,7 +3,7 @@ var fs = require('fs');
 var s = require('shazam');
 
 s('Prototyping apps with Hoodie', [
-  s.md(fs.readFileSync(__dirname + '/README.md'))
+  s.md(fs.readFileSync(__dirname + '/README.md', 'utf8'))
 ]);
 
 // deck.css(fs.readFileSync(__dirname + '/node_modules/decker/themes/basic.css'));
