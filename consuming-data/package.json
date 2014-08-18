@@ -17,9 +17,14 @@
   },
   "homepage": "https://github.com/DamonOehlman/talks",
   "dependencies": {
-    "ckan": "^0.2.1"
+    "shazam": "^0.3.3"
   },
   "devDependencies": {
     "request": "^2.40.0"
+  },
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
   }
 }
