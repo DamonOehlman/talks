@@ -1,6 +1,6 @@
 var fs = require('fs');
 var s = require('shazam');
 
-s('Prototyping apps with Hoodie', [
-  s.md(fs.readFileSync(__dirname + '/datasets.md', 'utf8'))
+s('Liberating Data', [
+  s.md(fs.readFileSync(__dirname + '/prep/datasets.md', 'utf8'))
 ]);
