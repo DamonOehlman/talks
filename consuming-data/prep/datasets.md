@@ -21,6 +21,8 @@
     curl "https://data.melbourne.vic.gov.au/resource/8nfq-mtcn.json?%24limit=10"
     ```
 
+---
+
 - [Building Footprints](https://data.melbourne.vic.gov.au/Property-and-Planning/Building-Foot-Prints/qe9w-cym8)
 - [Road Corridor](https://data.melbourne.vic.gov.au/Property-and-Planning/Road-Corridor/9mdh-8yau)
 
@@ -109,3 +111,11 @@
 ### Backend
 
 - [ckan](http://ckan.org/)
+
+## QLD Data
+
+https://data.qld.gov.au/
+
+### Interesting Datasets
+
+- https://data.qld.gov.au/dataset/coastal-data-system-near-real-time-wave-data
