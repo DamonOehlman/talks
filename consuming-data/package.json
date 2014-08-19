@@ -17,14 +17,15 @@
   },
   "homepage": "https://github.com/DamonOehlman/talks",
   "dependencies": {
-    "shazam": "^0.3.3"
+    "shazam": "^0.3.3",
+    "shazamify": "^1.0.0"
   },
   "devDependencies": {
     "request": "^2.40.0"
   },
   "browserify": {
     "transform": [
-      "brfs"
+      "shazamify"
     ]
   }
 }
