@@ -7,3 +7,8 @@
 
   <https://www.youtube.com/watch?v=S6LbKH6NnZU>
   (code) <https://gist.github.com/roman01la/5794160>
+
+
+## Visualization Libraries
+
+https://github.com/kousu/modex/blob/master/wiki/Platforms-and-APIs.md#visualization

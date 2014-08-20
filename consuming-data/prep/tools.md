@@ -27,3 +27,11 @@ needs: <https://code.google.com/p/libmini/>
 ### three.js converters
 
 - <https://github.com/mrdoob/three.js/blob/master/utils/converters/obj/convert_obj_three.py>
+
+## General Conversion Utilities
+
+- ogr2ogr
+- ogr2ogr npm package: https://github.com/wavded/ogr2ogr.git
+- ogre: https://github.com/wavded/ogre
+- https://github.com/geopipes
+- https://github.com/substack/osm-pbf-parser

@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/DamonOehlman/talks",
   "dependencies": {
+    "bespoke": "^1.0.0",
+    "bespoke-theme-cube": "^1.0.0-beta.3",
     "shazam": "^0.3.3",
     "shazamify": "^1.0.0"
   },

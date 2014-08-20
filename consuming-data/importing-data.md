@@ -1,5 +1,7 @@
 # Efficiently Importing Data
 
+---
+
 Taking a look at the Melbourne building footprints as geojson:
 
 ```
@@ -14,6 +16,8 @@ Baseline RES memory usage of the node repl on my machine is about `8Mb`:
 22942 doehlman  20   0  656296   8132   4440 S   0.7  0.1   0:00.02 node
 ```
 
+---
+
 If I was to read the `buildings.json` file into memory by simply doing the following:
 
 [`require-json.js`](experiments/streams/require-json.js)
@@ -27,3 +31,11 @@ Memory usage jumps increases by ~ `100MB`
 ```
 node --trace-gc --expose-gc stream-json.js
 ```
+
+---
+
+# LevelDB Love
+
+---
+
+## Importing
