@@ -20,7 +20,7 @@ Baseline RES memory usage of the node repl on my machine is about `8Mb`:
 
 If I was to read the `buildings.json` file into memory by simply doing the following:
 
-[`require-json.js`](experiments/streams/require-json.js)
+[`require-json.js`](examples/streams/require-json.js)
 
 Memory usage jumps increases by ~ `100MB`
 
@@ -39,3 +39,5 @@ node --trace-gc --expose-gc stream-json.js
 ---
 
 ## Importing
+
+[`level-importer.js`](examples/level-importer/index.js)
