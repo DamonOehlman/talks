@@ -35,3 +35,8 @@ needs: <https://code.google.com/p/libmini/>
 - ogre: https://github.com/wavded/ogre
 - https://github.com/geopipes
 - https://github.com/substack/osm-pbf-parser
+
+## LevelDB
+
+- node-levelup
+- https://github.com/maxogden/level.js
