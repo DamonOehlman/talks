@@ -1,3 +1,4 @@
+var h = require('hyperscript');
 var s = require('shazam');
 
 s({
@@ -16,16 +17,24 @@ s({
     require('./intro'),
     require('./formats'),
 
+    // cover a couple of different formats
     s.md(require('./processing-csv.md')),
     s.md(require('./processing-shapefile.md')),
-    s.md(require('./understanding-cors.md')),
 
+    // cover approaches for getting and how to integrate with
+    // various online repositories
+    s.md(require('./getting-data.md')),
 
-    s.md(require('./platform-integration.md')),
+    s.slide([
+      h('h2', 'an intro to'),
+      h('h1', 'DAT')
+    ]),
+    s.md(require('./dat.md')),
 
-    require('./tools'),
-
-    s.h1('Step 1: Importing Data'),
-    s.md(require('./parsing-data.md'))
+    s.slide([
+      h('h2', 'using'),
+      h('h1', 'DAT')
+    ]),
+    s.md(require('./dat-usage.md'))
   ]
 });
