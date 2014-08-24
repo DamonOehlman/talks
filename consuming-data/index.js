@@ -1,6 +1,8 @@
 var s = require('shazam');
 
 s({
+  title: 'Liberating Data',
+
   // override the default theme
   theme: require('bespoke-theme-tweakable')(),
 
@@ -14,8 +16,16 @@ s({
     require('./intro'),
     require('./formats'),
 
+    s.md(require('./processing-csv.md')),
+    s.md(require('./processing-shapefile.md')),
+    s.md(require('./understanding-cors.md')),
+
+
+    s.md(require('./platform-integration.md')),
+
+    require('./tools'),
+
     s.h1('Step 1: Importing Data'),
-    s.md(require('./importing-data.md')),
     s.md(require('./parsing-data.md'))
   ]
 });
