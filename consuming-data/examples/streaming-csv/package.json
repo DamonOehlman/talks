@@ -1,0 +1,22 @@
+{
+  "name": "streaming-csv",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concat-stream": "^1.4.6",
+    "corser": "^2.0.0",
+    "csv-parser": "DamonOehlman/csv-parser#browser-streaming-fix",
+    "express": "^4.8.5",
+    "filed": "^0.1.0",
+    "hyperquest": "^0.3.0",
+    "response-stream": "0.0.0",
+    "websocket-stream": "^0.6.0",
+    "ws": "^0.4.32"
+  }
+}
