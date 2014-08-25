@@ -1,10 +1,7 @@
 var request = require('hyperquest');
 var csv = require('csv-parser');
-var req = request('http://localhost:3000/data.csv', {
-  withCredentials: false
-});
 
-req.pipe(csv())
+request('/data.csv').pipe(csv())
   .on('data', function(item) {
     console.log(item.Year);
   })
