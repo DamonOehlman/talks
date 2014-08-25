@@ -4,7 +4,8 @@
   "description": "A talk on how to use various tools to consume data and make that more accessible",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "beefy index.js:bundle.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "shazamify": "^1.0.0"
   },
   "devDependencies": {
+    "beefy": "^2.1.1",
     "request": "^2.40.0"
   },
   "browserify": {
