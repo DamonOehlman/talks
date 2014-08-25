@@ -7,6 +7,8 @@ module.exports = [
 //     h('h2', 'Why should we care?')
   ], { jpg: 'thor-vs-superman', contain: true }),
 
+  s.h2('This is NOT a talk about Big Data'),
+
   [
     h('h2', 'Two Phased Approach'),
     h('ol',

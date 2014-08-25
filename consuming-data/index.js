@@ -35,6 +35,13 @@ s({
       h('h2', 'using'),
       h('h1', 'DAT')
     ]),
-    s.md(require('./dat-usage.md'))
+    s.md(require('./dat-usage.md')),
+
+    s.md(require('./leveldb.md')),
+
+    require('./displaying-the-data'),
+    require('./examples'),
+
+    s.md(require('./p2p.md'))
   ]
 });
