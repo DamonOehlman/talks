@@ -1,15 +1,15 @@
-var WRITE_BUFFER_SIZE = 1 * 1024 * 1024;
+const WRITE_BUFFER_SIZE = 1 * 1024 * 1024;
+const DATAFILE = __dirname + '/../../data/parking-events/events.csv';
 
 var fs = require('fs');
-var path = require('path');
-var datafile = path.resolve(__dirname, '../../data/melbdata/parking-events/events.csv');
 var lexinum = require('lexinum');
 var moment = require('moment');
+var csv = require('csv-parser');
+
 var pull = require('pull-stream');
 var batch = require('pull-level-batch');
 var toPullStream = require('stream-to-pull-stream');
 
-var csv = require('csv-parser');
 var db = require('leveldown')('/tmp/parking-events', {
   writeBufferSize: WRITE_BUFFER_SIZE
 });
@@ -36,7 +36,7 @@ db.open(function(err) {
 
   pull(
     toPullStream.source(
-      fs.createReadStream(datafile)
+      fs.createReadStream(DATAFILE)
       .pipe(csv())
     ),
     pull.map(prepObject),
