@@ -29,9 +29,9 @@ var FORMATS = [
 
 module.exports = [
   s.h1('Let\'s talk formats', { jpg: 'betamax' }),
-].concat(FORMATS).concat([
+].concat([] /* FORMATS */).concat([
   s.slide([
-    h('h2', 'Learn More'),
+    h('h2', 'Information on Data Formats'),
     h('ul',
       h('li', 'dataprotocols.org'),
       h('li', 'dat-data.com')
