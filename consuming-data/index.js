@@ -26,9 +26,7 @@ s({
     s.md(require('./getting-data.md')),
 
     s.slide([
-      h('h2', 'an intro to'),
-      h('h1', 'DAT')
-    ]),
+    ], { png: 'dat', contain: true }),
     s.md(require('./dat.md')),
 
     s.slide([
@@ -42,6 +40,7 @@ s({
     require('./displaying-the-data'),
     require('./examples'),
 
-    s.md(require('./p2p.md'))
+    s.md(require('./p2p.md')),
+    s.md(require('./thanks.md'))
   ]
 });

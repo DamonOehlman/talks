@@ -1484,9 +1484,7 @@ s({
     s.md(require('./getting-data.md')),
 
     s.slide([
-      h('h2', 'an intro to'),
-      h('h1', 'DAT')
-    ]),
+    ], { png: 'dat', contain: true }),
     s.md(require('./dat.md')),
 
     s.slide([
@@ -1500,11 +1498,12 @@ s({
     require('./displaying-the-data'),
     require('./examples'),
 
-    s.md(require('./p2p.md'))
+    s.md(require('./p2p.md')),
+    s.md(require('./thanks.md'))
   ]
 });
 
-},{"./dat-usage.md":6,"./dat.md":7,"./displaying-the-data":8,"./examples":9,"./formats":10,"./getting-data.md":11,"./intro":13,"./leveldb.md":14,"./p2p.md":156,"./processing-csv.md":157,"./processing-shapefile.md":158,"bespoke-bullets":15,"bespoke-theme-tweakable":16,"hyperscript":22,"shazam":32}],13:[function(require,module,exports){
+},{"./dat-usage.md":6,"./dat.md":7,"./displaying-the-data":8,"./examples":9,"./formats":10,"./getting-data.md":11,"./intro":13,"./leveldb.md":14,"./p2p.md":156,"./processing-csv.md":157,"./processing-shapefile.md":158,"./thanks.md":159,"bespoke-bullets":15,"bespoke-theme-tweakable":16,"hyperscript":22,"shazam":32}],13:[function(require,module,exports){
 var h = require('hyperscript');
 var s = require('shazam');
 
@@ -14558,4 +14557,6 @@ module.exports = "## A\n# P2P\n## future ?\n\n---\n\n# WebRTC\n## Data Channels\
 module.exports = "## processing data\n# CSV\n\n---\n\n## Importing a CSV file\n\n---\n\n```js\nvar fs = require('fs');\nvar csv = require('csv-parser');\n\nfs.createReadStream(__dirname + '/../../data/pedestrians/data.csv')\n  .pipe(csv())\n  .on('data', function(item) {\n    console.log(item.Year);\n  })\n  .on('end', function() {\n    console.log('done');\n  });\n\n```\n\n---\n\n## Serve it to the Browser\n\n---\n\n```js\nvar express = require('express');\nvar filed = require('filed');\nvar app = express();\nvar server = require('http').createServer(app);\n\napp.get('/data.csv', function(req, res) {\n  filed(__dirname +  '/../../data/pedestrians/data.csv').pipe(res);\n});\n\nserver.listen(3000);\n\n```\n\n---\n\n```no-highlight\n$ curl --head http://localhost:3000/data.csv\n```\n\n```no-highlight\nHTTP/1.1 200 OK\nX-Powered-By: Express\ncontent-type: text/csv\netag: abde8d92a4fcedbb7ede3ab6b5f1f003\nlast-modified: Sat, 23 Aug 2014 11:45:42 +1000\ncontent-length: 6374105\nDate: Sat, 23 Aug 2014 02:03:45 GMT\nConnection: keep-alive\n```\n\n---\n\n```js\nvar request = require('hyperquest');\nvar csv = require('csv-parser');\nvar req = request('http://localhost:3000/data.csv', {\n  withCredentials: false\n});\n\nreq.pipe(csv())\n  .on('data', function(item) {\n    console.log(item.Year);\n  })\n  .on('end', function() {\n    console.log('done');\n  });\n\n```\n\n---\n\n## You can do the same with a WebSocket connection\n\n---\n\n```js\nvar fs = require('fs');\nvar WebSocketServer = require('ws').Server;\nvar server = require('http').createServer();\nvar wss = new WebSocketServer({ server: server });\nvar wsstream = require('websocket-stream');\n\nwss.on('connection', function(socket) {\n  fs.createReadStream(__dirname + '/../../data/pedestrians/data.csv')\n    .pipe(wsstream(socket));\n});\n\nserver.listen(3000);\n\n```\n\n---\n\n```js\nvar websocket = require('websocket-stream');\nvar wss = websocket('ws://localhost:3000');\nvar csv = require('csv-parser');\n\nwss.pipe(csv())\n  .on('data', function(item) {\n    console.log(item.Year);\n  })\n  .on('end', function() {\n    console.log('done');\n  });\n\n```\n";
 },{}],158:[function(require,module,exports){
 module.exports = "## processing data\n# SHAPEFILE\n\n---\n\n## Converting to GeoJSON\n\n---\n\n```js\nvar fs = require('fs');\nvar path = require('path');\nvar ogr2ogr = require('ogr2ogr');\nvar datadir = path.resolve(__dirname, '../../data/qld-parks');\n\nogr2ogr(path.join(datadir, 'data.zip'))\n  .stream()\n  .pipe(fs.createWriteStream(path.join(datadir, 'data.json')));\n\n```\n\n---\n\n## Serve to the Browser\n\n---\n\n```js\nvar express = require('express');\nvar fs = require('fs');\nvar ogr2ogr = require('ogr2ogr');\nvar app = express();\n\napp.get('/parks.json', function(req, res) {\n  res.writeHead(200, {\n    'Content-Type': 'application/json'\n  });\n\n  ogr2ogr(__dirname +  '/../../data/qld-parks/data.zip')\n    .stream()\n    .pipe(res);\n});\n\napp.listen(3000);\n\n```\n";
+},{}],159:[function(require,module,exports){
+module.exports = "# THANKS\n\n---\n\n### Slides\n\n<http://damonoehlman.github.io/talks/consuming-data/>\n\n### Questions\n\n<https://twitter.com/DamonOehlman>\n";
 },{}]},{},[12]);
