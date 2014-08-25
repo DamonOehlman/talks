@@ -9,7 +9,7 @@ s({
 
   // use bullets and other bespoke addons
   plugins: [
-    require('bespoke-bullets')('li, .bullet')
+//     require('bespoke-bullets')('li, .bullet')
   ],
 
   // initialise the slides
