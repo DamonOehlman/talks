@@ -10,5 +10,6 @@ module.exports = [
   s.slide('', { png: 'd3' }),
   s.slide('', { png: 'leaflet' }),
   s.slide('', { png: 'cesium' }),
+  s.slide('', { png: 'vizicities' }),
   s.slide('', { png: 'mercury' })
 ];

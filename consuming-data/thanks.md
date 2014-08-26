@@ -6,6 +6,8 @@
 
 - <https://github.com/maxogden/dat>
 - <https://github.com/morganherlocker/voxel-openstreetmap>
+- <https://github.com/AnalyticalGraphicsInc/cesium>
+- <https://github.com/robhawkes/vizicities>
 
 ---
 

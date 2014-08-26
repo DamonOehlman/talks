@@ -1,7 +1,7 @@
 var request = require('hyperquest');
 var csv = require('csv-parser');
 
-request('/data.csv').pipe(csv())
+request(location.origin + '/data.csv').pipe(csv())
   .on('data', function(item) {
     console.log(item.Year);
   })

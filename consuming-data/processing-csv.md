@@ -15,7 +15,7 @@
 
 ---
 
-[`serve-csv.js`](examples/streaming-csv/serve-csv.js)
+[`serve-csv.js`](examples/streaming-csv/serve-csv.js ":10")
 
 ---
 

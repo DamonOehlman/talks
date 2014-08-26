@@ -15,6 +15,7 @@ s({
   // initialise the slides
   slides: [
     require('./intro'),
+//     require('./browserify-primer'),
     require('./formats'),
 
     // cover a couple of different formats
