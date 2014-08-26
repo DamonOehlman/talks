@@ -33,7 +33,10 @@ quickconnect('//switchboard.rtc.io/', { room: 'p2pcsv-test' })
     }
   })
 
+// capture when a file is dropped in a browser
 dropkick(document.body).on('file', function(file) {
+  // create a stream for each of the channels we know about and stream
+  // the file to the created stream
   channels.map(createDataStream).forEach(function(stream) {
     fileReader(file).pipe(stream);
   });
