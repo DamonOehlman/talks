@@ -22,6 +22,7 @@ s({
     require('./intro'),
 //     require('./browserify-primer'),
     require('./formats'),
+    require('./code-samples-intro'),
 
     // cover a couple of different formats
     s.md(require('./processing-csv.md')),
@@ -43,7 +44,8 @@ s({
     s.md(require('./leveldb.md')),
 
     require('./displaying-the-data'),
-    require('./examples'),
+    s.md(require('./improving-flow.md')),
+//     require('./examples'),
 
     s.md(require('./p2p.md')),
     s.md(require('./thanks.md'))
