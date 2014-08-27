@@ -2,7 +2,7 @@ var h = require('hyperscript');
 var s = require('shazam');
 
 module.exports = [
-  s.h1('examples'),
-  s.slide('', { png: 'national-map', contain: true }),
-  s.slide('', { png: 'osm-world', contain: true })
+  s.h1('Examples'),
+  snap('nationalmap.nicta.com.au'),
+  snap('github.com/morganherlocker/voxel-openstreetmap')
 ];

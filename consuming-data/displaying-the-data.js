@@ -1,5 +1,6 @@
 var h = require('hyperscript');
 var s = require('shazam');
+var snap = require('./lib/snapito');
 
 module.exports = [
   s.slide([
@@ -7,9 +8,9 @@ module.exports = [
     h('h1', 'DATA')
   ]),
 
-  s.site('d3js.org', { png: 'd3' }),
-  s.site('leafletjs.com', { png: 'leaflet' }),
-  s.site('cesiumjs.org', { png: 'cesium' }),
-  s.site('vizicities.com', { png: 'vizicities' }),
-  s.site('github.com/Raynos/mercury', { png: 'mercury' })
+  snap('d3js.org', { png: 'd3' }),
+  snap('leafletjs.com', { png: 'leaflet' }),
+  snap('cesiumjs.org', { png: 'cesium' }),
+  snap('vizicities.com', { png: 'vizicities' }),
+  snap('github.com/Raynos/mercury', { png: 'mercury' })
 ];

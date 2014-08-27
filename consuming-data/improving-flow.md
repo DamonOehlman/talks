@@ -1,4 +1,2 @@
 ## Embracing
 # Data Flow
-
----

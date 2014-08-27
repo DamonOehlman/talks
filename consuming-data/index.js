@@ -1,6 +1,7 @@
 var fs = require('fs');
 var h = require('hyperscript');
 var s = require('shazam');
+var snap = require('./lib/snapito');
 
 s({
   title: 'Liberating Data',
@@ -20,7 +21,6 @@ s({
   // initialise the slides
   slides: [
     require('./intro'),
-//     require('./browserify-primer'),
     require('./formats'),
     require('./code-samples-intro'),
 
@@ -30,9 +30,9 @@ s({
 
     // cover approaches for getting and how to integrate with
     // various online repositories
-    s.md(require('./getting-data.md')),
+    require('./getting-data'),
 
-    s.site('dat-data.com', { png: 'dat', contain: true }),
+    snap('dat-data.com'),
     s.md(require('./dat.md')),
 
     s.slide([
@@ -44,8 +44,8 @@ s({
     s.md(require('./leveldb.md')),
 
     require('./displaying-the-data'),
+    require('./examples'),
     s.md(require('./improving-flow.md')),
-//     require('./examples'),
 
     s.md(require('./p2p.md')),
     s.md(require('./thanks.md'))
