@@ -1,3 +1,4 @@
+var fs = require('fs');
 var h = require('hyperscript');
 var s = require('shazam');
 
@@ -10,6 +11,10 @@ s({
   // use bullets and other bespoke addons
   plugins: [
 //     require('bespoke-bullets')('li, .bullet')
+  ],
+
+  styles: [
+    fs.readFileSync(__dirname + '/css/slides.css')
   ],
 
   // initialise the slides
@@ -26,8 +31,7 @@ s({
     // various online repositories
     s.md(require('./getting-data.md')),
 
-    s.slide([
-    ], { png: 'dat', contain: true }),
+    s.site('dat-data.com', { png: 'dat', contain: true }),
     s.md(require('./dat.md')),
 
     s.slide([
