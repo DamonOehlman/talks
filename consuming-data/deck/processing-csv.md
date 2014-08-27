@@ -7,7 +7,7 @@
 
 ---
 
-[`process-csv.js`](examples/streaming-csv/process-csv.js)
+[`process-csv.js`](../examples/streaming-csv/process-csv.js)
 
 ---
 
@@ -15,7 +15,7 @@
 
 ---
 
-[`serve-csv.js`](examples/streaming-csv/serve-csv.js ":10")
+[`serve-csv.js`](../examples/streaming-csv/serve-csv.js ":10")
 
 ---
 
@@ -36,7 +36,7 @@ Connection: keep-alive
 
 ---
 
-[`consume-csv-xhr.js`](examples/streaming-csv/client/consume-csv-xhr.js)
+[`consume-csv-xhr.js`](../examples/streaming-csv/client/consume-csv-xhr.js)
 
 ---
 
@@ -44,8 +44,8 @@ Connection: keep-alive
 
 ---
 
-[`serve-csv-websocket.js`](examples/streaming-csv/serve-csv-websocket.js)
+[`serve-csv-websocket.js`](../examples/streaming-csv/serve-csv-websocket.js)
 
 ---
 
-[`consume-csv.js`](examples/streaming-csv/client/consume-csv.js)
+[`consume-csv.js`](../examples/streaming-csv/client/consume-csv.js)

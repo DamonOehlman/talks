@@ -1,6 +1,6 @@
 var h = require('hyperscript');
 var s = require('shazam');
-var snap = require('./lib/snapito');
+var snap = require('../lib/snapito');
 
 var FORMATS = [
   [ 'XLSX', 1513 ],

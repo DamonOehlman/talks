@@ -1,6 +1,6 @@
 var h = require('hyperscript');
 var s = require('shazam');
-var snap = require('./lib/snapito');
+var snap = require('../lib/snapito');
 
 module.exports = [
   s.h1('Getting Data'),

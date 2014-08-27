@@ -20,36 +20,36 @@ s({
 
   // initialise the slides
   slides: [
-    require('./intro'),
-    require('./formats'),
-    require('./code-samples-intro'),
+    require('./deck/intro'),
+    require('./deck/formats'),
+    require('./deck/code-samples-intro'),
 
     // cover a couple of different formats
-    s.md(require('./processing-csv.md')),
-    s.md(require('./processing-shapefile.md')),
+    s.md(require('./deck/processing-csv.md')),
+    s.md(require('./deck/processing-shapefile.md')),
     snap('ogre.adc4gis.com'),
 
     // cover approaches for getting and how to integrate with
     // various online repositories
-    require('./getting-data'),
+    require('./deck/getting-data'),
 
     snap('dat-data.com'),
-    s.md(require('./dat.md')),
+    s.md(require('./deck/dat.md')),
 
     s.slide([
       h('h2', 'using'),
       h('h1', 'DAT')
     ]),
-    s.md(require('./dat-usage.md')),
+    s.md(require('./deck/dat-usage.md')),
 
     snap('code.google.com/p/leveldb'),
-    s.md(require('./leveldb.md')),
+    s.md(require('./deck/leveldb.md')),
 
-    require('./displaying-the-data'),
-    require('./examples'),
-    s.md(require('./improving-flow.md')),
+    require('./deck/displaying-the-data'),
+    require('./deck/examples'),
+    s.md(require('./deck/improving-flow.md')),
 
-    s.md(require('./p2p.md')),
-    s.md(require('./thanks.md'))
+    s.md(require('./deck/p2p.md')),
+    s.md(require('./deck/thanks.md'))
   ]
 });

@@ -6,12 +6,12 @@
 
 ---
 
-[`importer.js'](examples/level-importer/index.js ":15")
+[`importer.js'](../examples/level-importer/index.js ":15")
 
 ---
 
-[`importer.js'](examples/level-importer/index.js "32:")
+[`importer.js'](../examples/level-importer/index.js "32:")
 
 ---
 
-[`importer.js'](examples/level-importer/index.js "19:31")
+[`importer.js'](../examples/level-importer/index.js "19:31")

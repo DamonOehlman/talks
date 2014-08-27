@@ -10,4 +10,4 @@ Some of the systems used around Australia (and globally):
 
 ## Using Socrata's API
 
-[`get-sensors.js`](examples/using-socrata/get-sensors.js)
+[`get-sensors.js`](../examples/using-socrata/get-sensors.js)
