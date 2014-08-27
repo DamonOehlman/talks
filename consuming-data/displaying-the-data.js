@@ -7,9 +7,9 @@ module.exports = [
     h('h1', 'DATA')
   ]),
 
-  s.slide('', { png: 'd3' }),
-  s.slide('', { png: 'leaflet' }),
-  s.slide('', { png: 'cesium' }),
-  s.slide('', { png: 'vizicities' }),
-  s.slide('', { png: 'mercury' })
+  s.site('d3js.org', { png: 'd3' }),
+  s.site('leafletjs.com', { png: 'leaflet' }),
+  s.site('cesiumjs.org', { png: 'cesium' }),
+  s.site('vizicities.com', { png: 'vizicities' }),
+  s.site('github.com/Raynos/mercury', { png: 'mercury' })
 ];
