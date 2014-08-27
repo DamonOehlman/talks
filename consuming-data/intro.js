@@ -17,14 +17,14 @@ module.exports = [
      )
   ],
 
-  s.h1('', { jpg: 'great-beyond', fontSize: '5em' }),
+//   s.h1('', { jpg: 'great-beyond', fontSize: '5em' }),
 
   s.md([
     '## Freeing Data',
     '- Releasing data that can be open, as open data.',
     '- Putting that data in tools people can use.',
     '- which _generally_ means making something that works in a browser'
-  ].join('\n')),
+  ].join('\n'))
 
-  s.slide('', { jpg: 'art-in-progress' })
+//   s.slide('', { jpg: 'art-in-progress' })
 ];
