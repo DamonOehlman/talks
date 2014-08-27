@@ -1,5 +1,5 @@
 var websocket = require('websocket-stream');
-var wss = websocket('ws://localhost:3000');
+var wss = websocket('ws://localhost:3000', { type: Uint8Array });
 var csv = require('csv-parser');
 
 wss.pipe(csv())
