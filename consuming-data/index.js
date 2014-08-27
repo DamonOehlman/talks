@@ -27,6 +27,7 @@ s({
     // cover a couple of different formats
     s.md(require('./processing-csv.md')),
     s.md(require('./processing-shapefile.md')),
+    snap('ogre.adc4gis.com'),
 
     // cover approaches for getting and how to integrate with
     // various online repositories
@@ -41,6 +42,7 @@ s({
     ]),
     s.md(require('./dat-usage.md')),
 
+    snap('code.google.com/p/leveldb'),
     s.md(require('./leveldb.md')),
 
     require('./displaying-the-data'),
