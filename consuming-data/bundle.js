@@ -1419,14 +1419,15 @@ module.exports = [
 },{"./lib/snapito":18,"hyperscript":25,"shazam":35}],10:[function(require,module,exports){
 var h = require('hyperscript');
 var s = require('shazam');
+var snap = require('./lib/snapito');
 
 module.exports = [
   s.h1('Examples'),
-  snap('nationalmap.nicta.com.au'),
+  s.site('nationalmap.nicta.com.au', { png: 'national-map' }),
   snap('github.com/morganherlocker/voxel-openstreetmap')
 ];
 
-},{"hyperscript":25,"shazam":35}],11:[function(require,module,exports){
+},{"./lib/snapito":18,"hyperscript":25,"shazam":35}],11:[function(require,module,exports){
 var h = require('hyperscript');
 var s = require('shazam');
 var snap = require('./lib/snapito');
@@ -1515,6 +1516,7 @@ s({
     // cover a couple of different formats
     s.md(require('./processing-csv.md')),
     s.md(require('./processing-shapefile.md')),
+    snap('ogre.adc4gis.com'),
 
     // cover approaches for getting and how to integrate with
     // various online repositories
@@ -1529,6 +1531,7 @@ s({
     ]),
     s.md(require('./dat-usage.md')),
 
+    snap('code.google.com/p/leveldb'),
     s.md(require('./leveldb.md')),
 
     require('./displaying-the-data'),
@@ -1574,7 +1577,7 @@ module.exports = [
 ];
 
 },{"hyperscript":25,"shazam":35}],17:[function(require,module,exports){
-module.exports = "# LevelDB\n\n---\n\n## What is LevelDB?\n\n> LevelDB is an open source on-disk key-value store written by Google Fellows Jeffrey Dean and Sanjay Ghemawat, who built parts of Google's platform. Inspired by BigTable, LevelDB is hosted on Google Code under the New BSD License and has been ported to a variety of Unix-based systems, Mac OS X, Windows, and Android. Open webOS's DB8 database service and also Basho Technologies' Riak use it as a backend.\n\n<http://en.wikipedia.org/wiki/LevelDB>\n\n---\n\n```js\nconst WRITE_BUFFER_SIZE = 1 * 1024 * 1024;\nconst DATAFILE = __dirname + '/../../data/parking-events/events.csv';\n\nvar fs = require('fs');\nvar lexinum = require('lexinum');\nvar moment = require('moment');\nvar csv = require('csv-parser');\n\nvar pull = require('pull-stream');\nvar batch = require('pull-level-batch');\nvar toPullStream = require('stream-to-pull-stream');\n\nvar db = require('leveldown')('/tmp/parking-events', {\n  writeBufferSize: WRITE_BUFFER_SIZE\n});\n```\n\n---\n\n```js\ndb.open(function(err) {\n  if (err) {\n    return console.error('could not open db');\n  }\n\n  pull(\n    toPullStream.source(\n      fs.createReadStream(DATAFILE)\n      .pipe(csv())\n    ),\n    pull.map(prepObject),\n    batch(WRITE_BUFFER_SIZE),\n    pull.asyncMap(db.batch.bind(db)),\n    pull.drain(reportProgress, function() {\n      console.log('done');\n    })\n  );\n});\n\n```\n\n---\n\n```js\nfunction prepObject(data) {\n  var arrive = moment(data['Arrival Time'], 'DD/MM/YYYY HH:mm:ss a');\n  var deviceId = parseInt(data['Device ID'], 10);\n  var key = arrive.valueOf() + ':' + lexinum(deviceId);\n  var value = JSON.stringify(data);\n\n  return {\n    type: 'put',\n    key: key,\n    value: JSON.stringify(data)\n  };\n}\n\n```\n";
+module.exports = "## What is LevelDB?\n\n> LevelDB is an open source on-disk key-value store written by Google Fellows Jeffrey Dean and Sanjay Ghemawat, who built parts of Google's platform. Inspired by BigTable, LevelDB is hosted on Google Code under the New BSD License and has been ported to a variety of Unix-based systems, Mac OS X, Windows, and Android. Open webOS's DB8 database service and also Basho Technologies' Riak use it as a backend.\n\n<http://en.wikipedia.org/wiki/LevelDB>\n\n---\n\n```js\nconst WRITE_BUFFER_SIZE = 1 * 1024 * 1024;\nconst DATAFILE = __dirname + '/../../data/parking-events/events.csv';\n\nvar fs = require('fs');\nvar lexinum = require('lexinum');\nvar moment = require('moment');\nvar csv = require('csv-parser');\n\nvar pull = require('pull-stream');\nvar batch = require('pull-level-batch');\nvar toPullStream = require('stream-to-pull-stream');\n\nvar db = require('leveldown')('/tmp/parking-events', {\n  writeBufferSize: WRITE_BUFFER_SIZE\n});\n```\n\n---\n\n```js\ndb.open(function(err) {\n  if (err) {\n    return console.error('could not open db');\n  }\n\n  pull(\n    toPullStream.source(\n      fs.createReadStream(DATAFILE)\n      .pipe(csv())\n    ),\n    pull.map(prepObject),\n    batch(WRITE_BUFFER_SIZE),\n    pull.asyncMap(db.batch.bind(db)),\n    pull.drain(reportProgress, function() {\n      console.log('done');\n    })\n  );\n});\n\n```\n\n---\n\n```js\nfunction prepObject(data) {\n  var arrive = moment(data['Arrival Time'], 'DD/MM/YYYY HH:mm:ss a');\n  var deviceId = parseInt(data['Device ID'], 10);\n  var key = arrive.valueOf() + ':' + lexinum(deviceId);\n  var value = JSON.stringify(data);\n\n  return {\n    type: 'put',\n    key: key,\n    value: JSON.stringify(data)\n  };\n}\n\n```\n";
 },{}],18:[function(require,module,exports){
 var s = require('shazam');
 var key = 'spu-7568b6-ttwi-xrr0ddcvljg2dxn8';
