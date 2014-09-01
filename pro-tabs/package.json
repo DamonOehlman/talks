@@ -1,0 +1,33 @@
+{
+  "name": "pro-tabs",
+  "version": "0.0.0",
+  "description": "A talk on why tabs are your friend",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DamonOehlman/talks.git"
+  },
+  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DamonOehlman/talks/issues"
+  },
+  "homepage": "https://github.com/DamonOehlman/talks",
+  "dependencies": {
+    "bespoke-theme-tweakable": "^1.0.0",
+    "brfs": "^1.2.0",
+    "hyperscript": "^1.4.0",
+    "shazam": "^1.0.0",
+    "shazamify": "^1.0.1"
+  },
+  "browserify": {
+    "transform": [
+      "brfs",
+      "shazamify"
+    ]
+  }
+}
