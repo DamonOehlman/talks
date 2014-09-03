@@ -26,8 +26,8 @@
   },
   "browserify": {
     "transform": [
-      "brfs",
-      "shazamify"
+      "shazamify",
+      "brfs"
     ]
   }
 }
