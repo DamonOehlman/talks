@@ -8,6 +8,9 @@ dev: clean
 bundle.js:
 	browserify index.js > bundle.js
 
+workshop-bundle.js:
+	browserify workshop.js > workshop-bundle.js
+
 clean:
 	@rm -rf bundle.js
 	@rm -rf workshop-bundle.js
