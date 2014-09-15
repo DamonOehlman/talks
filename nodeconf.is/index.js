@@ -3,7 +3,7 @@ var h = require('hyperscript');
 var s = require('shazam');
 
 s({
-  title: 'Coding WebRTC',
+  title: 'Modular WebRTC',
 
   // override the default theme
   theme: require('bespoke-theme-tweakable')(),
@@ -13,12 +13,40 @@ s({
 //     require('bespoke-bullets')('li, .bullet')
   ],
 
+  apikeys: {
+    flickr: '1afeba19b3dfd2a8a3671deb8a6fa165',
+  },
+
   styles: [
     fs.readFileSync(__dirname + '/deck.css')
   ],
 
   // initialise the slides
   slides: [
-    require('djo-slides/webrtc/intro')
+    s.slide([
+      h('h2', 'Modular'),
+      h('h1', 'WebRTC')
+    ]),
+
+    require('djo-slides/bio/abroad'),
+
+    require('djo-slides/webrtc/intro'),
+    s.slide().h1('but first...'),
+    require('djo-slides/webrtc/theory'),
+    require('djo-slides/webrtc/modules'),
+
+    require('djo-slides/webrtc/rtcio-intro'),
+    require('djo-slides/webrtc/rtcio-media'),
+    require('djo-slides/webrtc/rtcio-signalling'),
+    require('djo-slides/webrtc/rtcio-connecting'),
+    require('djo-slides/webrtc/rtcio-datachannels'),
+
+    require('djo-slides/webrtc/future'),
+    require('djo-slides/thanks'),
+
+    s.slide()
+      .h2('slides:').url('http://damonoehlman.github.com/talks/nodeconf.is')
+      .h2('github:').url('http://github.com/DamonOehlman')
+      .h2('twitter:').url('http://twitter.com/DamonOehlman')
   ]
 });
