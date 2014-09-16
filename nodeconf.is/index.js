@@ -28,9 +28,10 @@ s({
       h('h1', 'WebRTC')
     ]),
 
-    require('djo-slides/bio/abroad'),
+    require('djo-slides/webrtc/using-slides'),
+    // require('djo-slides/bio/abroad'),
 
-    require('djo-slides/webrtc/intro'),
+    // require('djo-slides/webrtc/intro'),
     s.slide().h1('but first...'),
     require('djo-slides/webrtc/theory'),
     require('djo-slides/webrtc/modules'),
