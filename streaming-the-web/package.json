@@ -36,5 +36,8 @@
     "brfs": "^1.1.1",
     "stylify": "^0.1.3",
     "insert-css": "^0.1.1"
+  },
+  "browserify": {
+    "transform": [ "brfs" ]
   }
 }
