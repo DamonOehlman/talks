@@ -28,26 +28,18 @@ s({
       h('h1', 'WebRTC')
     ]),
 
-    require('djo-slides/webrtc/using-slides'),
-    // require('djo-slides/bio/abroad'),
-
-    // require('djo-slides/webrtc/intro'),
-    s.slide().h1('but first...'),
-    require('djo-slides/webrtc/theory'),
-    require('djo-slides/webrtc/modules'),
     require('djo-slides/webrtc/media-modules'),
-
     require('djo-slides/webrtc/rtcio-intro'),
-    require('djo-slides/webrtc/rtcio-media'),
+//     require('djo-slides/webrtc/rtcio-media'),
     require('djo-slides/webrtc/rtcio-signalling'),
     require('djo-slides/webrtc/rtcio-connecting'),
     require('djo-slides/webrtc/rtcio-datachannels'),
 
-    require('djo-slides/webrtc/future'),
+//     require('djo-slides/webrtc/future'),
     require('djo-slides/thanks'),
 
     s.slide()
-      .h2('slides:').url('http://damonoehlman.github.com/talks/nodeconf.is')
+      .h2('slides:').url('http://damonoehlman.github.com/talks/sydjs/modular-webrtc/')
       .h2('github:').url('http://github.com/DamonOehlman')
       .h2('twitter:').url('http://twitter.com/DamonOehlman')
   ]

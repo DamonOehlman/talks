@@ -1,0 +1,24 @@
+{
+  "name": "modular-webrtc-sydjs",
+  "version": "1.0.0",
+  "description": "WebRTC talk and workshop for NodeConf.iS",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
+  "license": "CCBY3.0",
+  "dependencies": {
+    "bespoke-theme-tweakable": "^1.0.0",
+    "brfs": "^1.2.0",
+    "djo-slides": "DamonOehlman/slides",
+    "hyperscript": "^1.4.0",
+    "shazam": "^1.1.0"
+  },
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
+  }
+}
