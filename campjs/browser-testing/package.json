@@ -1,0 +1,26 @@
+{
+  "name": "browser-testing",
+  "version": "1.0.0",
+  "description": "Browser Testing Talk",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
+  "license": "CCBY3.0",
+  "dependencies": {
+    "bespoke-theme-tweakable": "^1.0.0",
+    "brfs": "^1.2.0",
+    "hyperscript": "^1.4.0",
+    "shaz": "^2.1.0",
+    "shazam": "^1.1.0",
+    "shazamify": "~1.0.1"
+  },
+  "browserify": {
+    "transform": [
+      "shazamify",
+      "brfs"
+    ]
+  }
+}
