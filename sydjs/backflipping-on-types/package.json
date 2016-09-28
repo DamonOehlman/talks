@@ -1,0 +1,14 @@
+{
+  "name": "backflipping-on-types",
+  "version": "1.0.0",
+  "description": "",
+  "main": "no-types.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "hardnosed-closure": "^1.1.0"
+  }
+}
