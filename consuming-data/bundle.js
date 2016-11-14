@@ -124,7 +124,7 @@ module.exports = [
 
 //   s.h1('', { jpg: 'great-beyond', fontSize: '5em' }),
 
-  s.md([
+  s.markdown([
     '## Freeing Data',
     '- Releasing data that can be open, as open data.',
     '- Putting that data in tools people can use.',
@@ -21503,7 +21503,7 @@ require('./tags').forEach(function(tagName) {
 
 // special tags :)
 slide.img = require('./img');
-slide.markdown = exports.md = require('./markdown');
+slide.markdown = slide.md = require('./markdown');
 slide.site = require('./site');
 
 },{"./img":227,"./markdown":236,"./site":237,"./slide":238,"./tag":239,"./tags":240}],229:[function(require,module,exports){
