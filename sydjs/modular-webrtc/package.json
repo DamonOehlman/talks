@@ -5,7 +5,9 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "Damon Oehlman <damon.oehlman@gmail.com>",
   "license": "CCBY3.0",
@@ -15,11 +17,13 @@
     "djo-slides": "DamonOehlman/slides",
     "hyperscript": "^1.4.0",
     "shaz": "^2.1.0",
-    "shazam": "^1.1.0"
+    "shazam": "^1.1.0",
+    "snyk": "^1.316.1"
   },
   "browserify": {
     "transform": [
       "brfs"
     ]
-  }
+  },
+  "snyk": true
 }
