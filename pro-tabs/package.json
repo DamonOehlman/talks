@@ -5,7 +5,9 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -22,12 +24,14 @@
     "brfs": "^1.2.0",
     "hyperscript": "^1.4.0",
     "shazam": "^1.0.0",
-    "shazamify": "^1.0.1"
+    "shazamify": "^1.0.1",
+    "snyk": "^1.316.1"
   },
   "browserify": {
     "transform": [
       "shazamify",
       "brfs"
     ]
-  }
+  },
+  "snyk": true
 }
