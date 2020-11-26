@@ -19,7 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "brfs": "^1.2.0",
-    "shazam": "^0.3.2"
+    "shazam": "^1.3.0"
   },
   "browserify": {
     "transform": [
