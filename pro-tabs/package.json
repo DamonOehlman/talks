@@ -21,7 +21,7 @@
     "bespoke-theme-tweakable": "^1.0.0",
     "brfs": "^1.2.0",
     "hyperscript": "^1.4.0",
-    "shazam": "^1.0.0",
+    "shazam": "^2.1.0",
     "shazamify": "^1.0.1"
   },
   "browserify": {
