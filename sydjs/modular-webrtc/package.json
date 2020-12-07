@@ -15,7 +15,7 @@
     "djo-slides": "DamonOehlman/slides",
     "hyperscript": "^1.4.0",
     "shaz": "^2.1.0",
-    "shazam": "^1.1.0"
+    "shazam": "^2.1.0"
   },
   "browserify": {
     "transform": [
