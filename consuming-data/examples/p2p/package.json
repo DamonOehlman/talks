@@ -13,6 +13,6 @@
     "dropkick": "^0.1.1",
     "filestream": "^1.0.1",
     "rtc-dcstream": "^1.1.0",
-    "rtc-quickconnect": "^2.6.0"
+    "rtc-quickconnect": "^4.3.0"
   }
 }
