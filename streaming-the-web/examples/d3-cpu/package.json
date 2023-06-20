@@ -19,7 +19,7 @@
   "homepage": "https://github.com/DamonOehlman/streaming-the-web",
   "dependencies": {
     "d3": "^3",
-    "levelup": "^0.18.2",
+    "levelup": "^2.0.0",
     "leveldown": "^0.10.2",
     "pull-level": "^1.1.10",
     "pull-sse": "~0.4",
