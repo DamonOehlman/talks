@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ogr2ogr": "^0.3.1"
+    "ogr2ogr": "^1.0.0"
   }
 }
