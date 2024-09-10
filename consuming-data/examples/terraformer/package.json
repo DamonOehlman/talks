@@ -4,7 +4,9 @@
   "description": "Taking terraformer for a spin",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "license": "ISC",
   "author": "Damon Oehlman <damon.oehlman@gmail.com>",
@@ -16,6 +18,8 @@
     "terraformer-geostore": "^1.0.4",
     "terraformer-geostore-leveldb": "^1.1.1",
     "terraformer-rtree": "^1.0.0",
-    "through": "^2.3.4"
-  }
+    "through": "^2.3.4",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
