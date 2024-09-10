@@ -1,0 +1,37 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.25.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:mime:20170907':
+    - terraformer-geostore-leveldb > testling > ecstatic > mime:
+        patched: '2024-09-10T22:54:30.370Z'
+        id: 'npm:mime:20170907'
+        path: terraformer-geostore-leveldb > testling > ecstatic > mime
+  'npm:minimatch:20160620':
+    - terraformer-geostore-leveldb > testling > glob > minimatch:
+        patched: '2024-09-10T22:54:30.370Z'
+        id: 'npm:minimatch:20160620'
+        path: terraformer-geostore-leveldb > testling > glob > minimatch
+    - terraformer-geostore-leveldb > testling > browserify > glob > minimatch:
+        patched: '2024-09-10T22:54:30.370Z'
+        id: 'npm:minimatch:20160620'
+        path: >-
+          terraformer-geostore-leveldb > testling > browserify > glob >
+          minimatch
+  'npm:semver:20150403':
+    - terraformer-geostore-leveldb > levelup > semver:
+        patched: '2024-09-10T22:54:30.370Z'
+        id: 'npm:semver:20150403'
+        path: terraformer-geostore-leveldb > levelup > semver
+  'npm:uglify-js:20151024':
+    - terraformer-geostore-leveldb > testling > browserify > umd > ruglify > uglify-js:
+        patched: '2024-09-10T22:54:30.370Z'
+        id: 'npm:uglify-js:20151024'
+        path: >-
+          terraformer-geostore-leveldb > testling > browserify > umd > ruglify >
+          uglify-js
+    - terraformer-geostore-leveldb > testling > browserify > umd > uglify-js:
+        patched: '2024-09-10T22:54:30.370Z'
+        id: 'npm:uglify-js:20151024'
+        path: terraformer-geostore-leveldb > testling > browserify > umd > uglify-js
